@@ -1,0 +1,35 @@
+*{
+    color: black;
+}
+
+.main{
+    padding: 20px;
+    margin-top: 50px;
+    gap: 20px;
+}
+section{
+  
+    display: flex;
+    justify-content: center;
+}
+
+.main_div{
+    height:400px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_div img{
+    height: 100%;
+    width: 50%;
+    border-radius: 30px;
+}
+
+button{
+    height: 40px;
+    width: 140px;
+    background-color: rgb(132, 237, 202);
+    border-radius: 20px;
+}

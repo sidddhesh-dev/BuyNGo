@@ -1,0 +1,37 @@
+body{
+    color: white;
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar{
+    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;   /* keeps it above everything */
+    background-color: rgb(223, 222, 222); /* or your color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    gap:10px;
+    position: fixed;
+    
+}
+
+.first{
+    width: 600px;
+    background-color: antiquewhite;
+    
+}
+a {
+    font-size: small;
+    text-decoration: none; 
+}
+
+.footer{
+    background-color: black;
+    color: white;
+}

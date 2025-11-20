@@ -3,7 +3,7 @@ from django.db import models
 class Products(models.Model):
     name=models.CharField(max_length=100)
     description=models.TextField()
-    price=models.FloatField(max_digits=10,decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     image=models.ImageField(upload_to='Products/')
     catagory=models.CharField(max_length=100)
 
