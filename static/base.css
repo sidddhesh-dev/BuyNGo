@@ -32,6 +32,8 @@ a {
 }
 
 .footer{
-    background-color: black;
-    color: rgb(132, 58, 58);
+    background-color: rgb(223, 222, 222);;
+    text-decoration-color: white;
+    display: flex;
+    justify-content: first baseline;
 }
