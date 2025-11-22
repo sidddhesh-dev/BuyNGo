@@ -13,7 +13,8 @@
          <span>
            <h1>Lorem ipsum dolor sit amet.</h1>
            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, quia?</p> 
-           <button  onclick="gonext()">Explore More</button>
+           <a href="{% url 'product_list' %}" >
+            <button>Explore More </button></a>
          </span>   
         <img src="https://thumbs.dreamstime.com/b/pair-men-s-casual-white-shoes-marble-background-pair-men-s-casual-white-shoes-marble-background-404782427.jpg" alt="">
         </div>
@@ -28,7 +29,7 @@
 <script>
 
     function gonext() {
-        window.location.href="{% url 'product_list' %}"
+        window.location.href="{% url 'import_success' %}"
         
     }
 </script>

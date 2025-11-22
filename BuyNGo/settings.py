@@ -27,10 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Redirects after login & logout
-LOGIN_REDIRECT_URL = 'homepage'     
-LOGOUT_REDIRECT_URL = 'login'
-
 
 # Application definition
 

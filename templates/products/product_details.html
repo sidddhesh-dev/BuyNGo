@@ -7,13 +7,14 @@
 
 <div class="product-detail">
 
-    <img src="{{ product.image.url }}" class="big-img">
+    <img src="{{ product.image }}" class="big-img">
 
     <div class="info">
         <h1>{{ product.name }}</h1>
         <p class="price">$ {{ product.price }}</p>
         <p class="cat">Category: {{ product.catagory }}</p>
         <p class="desc">{{ product.description }}</p>
+        <p>⭐{{ product.rating }} ratings</p>
          <section>
             <button class="buy">BUY NOW</button>
             <button class="wishlist"> ADD TO WISHLIST</button>

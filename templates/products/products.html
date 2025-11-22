@@ -4,23 +4,20 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 
-
 <main class="main">
     {% for p in products %}
     <section class="sec1">
         <a href="{% url 'product_detail' p.id %}">
         <div class="div1">
-            <img src="{{ p.image.url }}" alt="{{ p.title }}">
+            <img src="{{ p.image }}" alt="{{ p.name }}">
             <h3>{{ p.name }}</h3>
             <p>{{ p.category }}</p>
             <p>$ {{ p.price }}</p>
+            <p>⭐{{ p.rating }} ratings</p>
             <button>BUY NOW</button>
         </div>
         </a>
     </section>
     {% endfor %}
 </main>
-
-
-
 {% endblock %}
