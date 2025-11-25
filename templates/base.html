@@ -9,17 +9,39 @@
 </head>
 <body>
     <div class="navbar">
-        <h2>SOULMATES</h2>
-        <a href="{% url 'home' %}">HOME</a>
-        <a href="{% url 'product_list' %}">SHOP</a>
-        <a href="">Catagories</a>
-        <a href="">CONTACT</a>
-        <input type="text" placeholder="search for products">
-        <a href="{% url 'carts' %}"><img src="" alt="">cart</a>
-        <a href="{% url 'accounts' %}"><img src="" alt="">account</a>
+    <h2>SOULMATES</h2>
 
+    <a href="{% url 'home' %}">HOME</a>
+    <a href="{% url 'product_list' %}">SHOP</a>
+    <a href="">CATEGORIES</a>
+    <a href="">CONTACT</a>
+
+    <input type="text" placeholder="search for products">
     
-    </div>
+    <span class="navbar_span">
+        
+        <a href="{% url 'carts' %}" class="icon-link">
+        <img src="https://www.vhv.rs/dpng/d/428-4287684_background-shopping-cart-transparent-transparent-background-shopping-cart.png" class="nav-icon">
+        <span>Cart</span>
+    </a>
+    
+    
+    <a href="{% url 'wishlist' %}" class="icon-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/8830/8830807.png" class="nav-icon">
+        <span>Wishlist</span>
+    </a>
+
+    <a href="{% url 'accounts' %}" class="icon-link">
+        <img src="https://w7.pngwing.com/pngs/215/58/png-transparent-computer-icons-google-account-scalable-graphics-computer-file-my-account-icon-rim-123rf-symbol.png" class="nav-icon">
+        <span>Account</span>
+    </a>
+    
+
+    </span>
+    
+    
+</div>
+
      {% block content %}
 
     {% endblock %}
