@@ -1,7 +1,4 @@
-from django.shortcuts import render,redirect
-from .models import Products
-from django.shortcuts import get_object_or_404
-from django.shortcuts import render
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import Products
 from .api_services import fetch_data
 
@@ -19,3 +16,4 @@ def product_details(request,id):
 def import_products(request):
     fetch_data()  # fetch and insert products
     return redirect('product_list')
+
