@@ -13,10 +13,10 @@
 
     <a href="{% url 'home' %}">HOME</a>
     <a href="{% url 'product_list' %}">SHOP</a>
-    <a href="">CATEGORIES</a>
+    <a href="#" id="categoryBtn">CATEGORIES</a>
     <a href="">CONTACT</a>
 
-    <input type="text" placeholder="search for products">
+    <input type="text" placeholder="search for products" ><button id="searchBtn">search</button>
     
     <span class="navbar_span">
         
@@ -35,14 +35,19 @@
         <img src="https://w7.pngwing.com/pngs/215/58/png-transparent-computer-icons-google-account-scalable-graphics-computer-file-my-account-icon-rim-123rf-symbol.png" class="nav-icon">
         <span>Account</span>
     </a>
-    
-
-    </span>
-    
-    
+    </span> 
 </div>
 
-     {% block content %}
+    <div id="categoryList">
+        <ul>
+            <li>Electronics</li>
+            <li>Fashion</li>
+            <li>Jwellery</li>
+            <li>Computer Appliences</li>                                                           
+        </ul>
+    </div>
+
+    {% block content %}
 
     {% endblock %}
 
@@ -125,6 +130,9 @@
 
 
     </div>
+
+<script src="{% static 'products/js/catagories.js' %}"></script>
+
     
 
 </body>
