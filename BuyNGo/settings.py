@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'orders',
     'accounts',
     'wishlist',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #to add the media files externally we have to add this in our settings.py file
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+AUTH_USER_MODEL = "accounts.User"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+}
