@@ -9,33 +9,40 @@
 </head>
 <body>
     <div class="navbar">
-    <h2>SOULMATES</h2>
 
-    <a href="{% url 'home' %}">HOME</a>
-    <a href="{% url 'product_list' %}">SHOP</a>
-    <a href="#" id="categoryBtn">CATEGORIES</a>
-    <a href="">CONTACT</a>
+    <h2 class="logo">SOULMATES</h2>
 
-    <input type="text" placeholder="search for products" ><button id="searchBtn">search</button>
-    
-    <span class="navbar_span">
-        
-        <a href="{% url 'carts' %}" class="icon-link">
-        <img src="https://www.vhv.rs/dpng/d/428-4287684_background-shopping-cart-transparent-transparent-background-shopping-cart.png" class="nav-icon">
-        <span>Cart</span>
-    </a>
-    
-    
-    <a href="{% url 'wishlist' %}" class="icon-link">
-        <img src="https://cdn-icons-png.flaticon.com/512/8830/8830807.png" class="nav-icon">
-        <span>Wishlist</span>
-    </a>
+    <div class="nav-links">
+        <a href="#">HOME</a>
+        <a href="#">SHOP</a>
+        <a href="#" id="categoryBtn">CATEGORIES</a>
+        <a href="#">CONTACT</a>
+    </div>
 
-    <a href="{% url 'accounts' %}" class="icon-link">
-        <img src="https://w7.pngwing.com/pngs/215/58/png-transparent-computer-icons-google-account-scalable-graphics-computer-file-my-account-icon-rim-123rf-symbol.png" class="nav-icon">
-        <span>Account</span>
-    </a>
-    </span> 
+    <div class="nav-right">
+        <div class="nav-search">
+            <input type="text" name="q" placeholder="search for products">
+            <button id="searchBtn">search</button>
+        </div>
+
+        <div class="navbar_span">
+            <a href="#" class="icon-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" class="nav-icon">
+                <span>Cart</span>
+            </a>
+
+            <a href="#" class="icon-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/8830/8830807.png" class="nav-icon">
+                <span>Wishlist</span>
+            </a>
+
+            <a href="#" class="icon-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" class="nav-icon">
+                <span>Account</span>
+            </a>
+        </div>
+    </div>
+
 </div>
 
     <div id="categoryList">

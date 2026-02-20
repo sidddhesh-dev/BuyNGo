@@ -21,3 +21,6 @@ def add_to_wishlist(request, id):
 
     return redirect("product_details", id=id)
 
+def wishlist(request):
+    return render(request,'wishlist/wishlist.html')
+
