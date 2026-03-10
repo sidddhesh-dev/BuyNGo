@@ -4,6 +4,150 @@
 <link rel="stylesheet" href="{% static 'home/css/develper.css' %}">
 
 {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/developer.css' %}">
+
+<section class="about-section">
+    <div class="container about-container">
+
+        <div class="about-text">
+            <h1>Siddhesh Thorat</h1>
+            <h2>Emerging Full Stack Python Developer</h2>
+
+            <p>
+                Full Stack Python Developer with hands-on experience building scalable web applications using Python,
+                Django, and REST APIs. Skilled in backend development, database design, authentication systems,
+                and performance optimization.
+            </p>
+
+            <a href="/static/images/siddhesh_resume_FS.pdf" class="resume-btn" target="_blank">
+                Download Resume
+            </a>
+        </div>
+
+
+        <div class="about-image">
+            <img src="/static/images/profile.png" alt="Siddhesh Thorat">
+        </div>
+
+    </div>
+</section>
+
+<section class="section light">
+    <div class="container">
+        <h2>Projects</h2>
+
+        <div class="project-card">
+            <h3>Job Application Tracker</h3>
+            <p>Job Application Tracker is a full-stack Django web application designed to help job seekers efficiently manage and monitor their job search process in one centralized platform.
+
+            The system allows users to store and track job applications, interview schedules, company details, application status, and important deadlines. It improves organization and reduces missed opportunities by providing structured tracking and real-time status updates.</p>
+            <p><strong>Tech:</strong> Django, Python, HTML, CSS, Bootstrap, JavaScript</p>
+            <a href="https://github.com/sidddhesh-dev/job_tracking_application">GitHub Repository</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Buy-N-Go (E-Commerce)</h3>
+            <p>Buy-N-Go is a full-stack e-commerce web application built using Django that enables users to browse products, view dynamic listings, and securely manage their shopping experience. The platform integrates external REST APIs to fetch and render real-time product data, ensuring dynamic content and scalability.
+
+            The application demonstrates modern e-commerce architecture by combining secure authentication, database management, and API-driven product rendering..</p>
+            <p><strong>Tech:</strong> Django, PostgreSQL, REST API</p>
+            <a href="https://github.com/sidddhesh-dev/BuyNGo">GitHub Repository</a>
+        </div>
+
+        <div class="project-card">
+            <h3>NewDays Learning App</h3>
+            <p>NewDays is an interactive children’s learning web application designed to support early cognitive development through engaging visuals, interactive elements, and user-friendly educational content.
+
+            The platform provides a playful digital learning environment where children can improve recognition skills, memory, and basic learning abilities through interactive UI components and structured activities.</p>
+            <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <a href="#">GitHub Repository</a>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <h3>Python Developer Intern</h3>
+            <span>Testyantra Software Solutions Pvt. Ltd. | Jan 2025 – Oct 2025</span>
+            <ul>
+                <li>Developed scalable backend modules using Python & Django, improving application structure and maintainability.</li>
+                <li>Designed and implemented RESTful APIs enabling secure and seamless communication between frontend and backend systems.</li>
+                <li>Optimized SQL queries and database operations, improving performance and reducing response time.</li>
+                <li>Implemented secure authentication workflows and strengthened application data protection.</li>
+                <li>Debugged and resolved application issues, enhancing system reliability and user experience.</li>
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="section light">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Python</span>
+            <span>Django</span>
+            <span>MySQL</span>
+            <span>Django REST Framework</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+            <span>JavaScript</span>
+            <span>HTML5 & CSS3</span>
+            <span>REST APIs</span>
+            <span>Git & GitHub</span>
+            <span>Postman</span>
+            <span>Vs Code</span>
+            <span>Data structure and algorithms</span>
+            <span>OOP & SDLC</span>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Education</h2>
+
+        <div class="edu">
+            <h3>Bachelor of Engineering (Computer Engineering)</h3>
+            <p>Bharat College of Engineering, Mumbai</p>
+            <span>2022 – 2025</span>
+        </div>
+
+        <div class="edu">
+            <h3>Diploma in Information Technology</h3>
+            <p>Govt. Polytechnic Awasari BK, Pune</p>
+            <span>2019 – 2022</span>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact_details" class="section light">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <p><strong>Email:</strong> siddhesh.s.thorat14@gmail.com</p>
+        <p><strong>Phone:</strong> +91 8830875465</p>
+        <p><strong>Location:</strong> Pune, Maharashtra, India</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Siddhesh Thorat | Built with Django</p>
+</footer>
+
+{% endblock %}
 
 <h2>"this is develper page </h2>
 {% endblock %}
