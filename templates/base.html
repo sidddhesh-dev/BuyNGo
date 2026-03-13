@@ -2,157 +2,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'base.css' %}">
-    <title>Document</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SOULMATES</title>
+
+<link rel="stylesheet" href="{% static 'base.css' %}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <div class="navbar">
 
-    <h2 class="logo">SOULMATES</h2>
+<header class="navbar">
 
-    <div class="nav-links">
-        <a href="{% url 'home' %}">HOME</a>
-        <a href="#">SHOP</a>
-        <a href="#" id="categoryBtn">CATEGORIES</a>
-        <a href="">CONTACT</a>
+    <div class="nav-left">
+        <h2 class="logo">SOULMATES</h2>
+    </div>
+
+    <div class="nav-center">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Categories</a>
+        <a href="#">Contact</a>
     </div>
 
     <div class="nav-right">
+
         <div class="nav-search">
-            <input type="text" name="q" placeholder="search for products">
-            <button id="searchBtn">search</button>
+            <input type="text" placeholder="Search products...">
+            <button>Search</button>
         </div>
 
-        <div class="navbar_span">
+        <div class="nav-icons">
+
             <a href="#" class="icon-link">
-                <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" class="nav-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png">
                 <span>Cart</span>
             </a>
 
             <a href="#" class="icon-link">
-                <img src="https://cdn-icons-png.flaticon.com/512/8830/8830807.png" class="nav-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/8830/8830807.png">
                 <span>Wishlist</span>
             </a>
 
             <a href="#" class="icon-link">
-                <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" class="nav-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png">
                 <span>Account</span>
             </a>
+
         </div>
+
     </div>
+
+</header>
+
+<main>
+
+{% block content %}
+
+{% endblock %}
+
+</main>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-about">
+<h3>SOULMATES</h3>
+<p>Premium footwear designed for comfort and style.</p>
+</div>
+
+<div class="footer-links">
+<h4>Links</h4>
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'developer' %}">Developer</a>
+</div>
+
+<div class="footer-social">
+<h4>Connect</h4>
+<a href="https://github.com/siddhesh-dev">GitHub</a>
+<a href="https://linkedin.com">LinkedIn</a>
+</div>
 
 </div>
 
-    <div id="categoryList">
-        <ul>
-            <li>Electronics</li>
-            <li>Fashion</li>
-            <li>Jwellery</li>
-            <li>Computer Appliences</li>                                                           
-        </ul>
-    </div>
+<p class="footer-bottom">© 2025 SOULMATES</p>
 
-    {% block content %}
-
-    {% endblock %}
-
-    <div>
-        <footer class="footer">
-        <div class="footer-container">
-
-        <div class="footer-about">
-            <h2 class="logo">SOULMATES</h2>
-            <p>Your trusted destination for premium products and seamless online shopping.</p>
-        </div>
-    <div class="footer">
-        <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-help">
-            <h3>Customer Service</h3>
-            <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Shipping Policy</a></li>
-                <li><a href="#">Return & Refund</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <footer class="footer">
-    <div class="footer-container">
-
-        <div class="footer-about">
-            <h2 class="logo">SOULMATES</h2>
-            <p>Your trusted destination for premium products and seamless online shopping.</p>
-        </div>
-
-        <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-help">
-            <h3>Customer Service</h3>
-            <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Shipping Policy</a></li>
-                <li><a href="#">Return & Refund</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-social">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-                <a href="#"><img src="" alt="facebook"></a>
-                <a href="#"><img src="" alt="instagram"></a>
-                <a href="#"><img src="" alt="twitter"></a>
-                <a href="#"><img src="" alt="youtube"></a>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2025 SOULMATES | All Rights Reserved.</p>
-    </div>
-
-    <div class="footer-container1">
-
-        <p>© 2025 BuY N Go </p>
-
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/siddhesh-thorat-494123373/">LinkedIn</a>
-            <a href="https://github.com/sidddhesh-dev">GitHub</a>
-            <a href="{% url 'developer' %}">Contact</a>
-        </div>
-
-    </div>
-    </footer>
-    </div>
-
-
-    </div>
-
-<script src="{% static 'products/js/catagories.js' %}"></script>
-
-    
+</footer>
 
 </body>
 </html>
