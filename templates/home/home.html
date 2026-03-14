@@ -7,31 +7,43 @@
 
 <main class="main">
 
-    <section>
-        <div class="main_div">
-            
-         <span>
-           <h1>Step Into Style & Comfort</h1>
-           <p>Discover premium footwear crafted for comfort, durability, and everyday elegance.</p> 
-           <a href="{% url 'product_list' %}" >
-            <button>Explore More </button></a>
-         </span>   
-        <img src="https://thumbs.dreamstime.com/b/pair-men-s-casual-white-shoes-marble-background-pair-men-s-casual-white-shoes-marble-background-404782427.jpg" alt="">
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-text">
+            <h1>Step Into Style & Comfort</h1>
+
+            <p>
+                Discover premium footwear crafted for comfort, durability, 
+                and everyday elegance.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{% url 'product_list' %}">
+                    <button class="btn primary-btn">
+                        Shop Now
+                    </button>
+                </a>
+
+                <a href="{% url 'developer' %}">
+                    <button class="btn secondary-btn">
+                        Developer
+                    </button>
+                </a>
+
+            </div>
         </div>
-        
-        
-    </section>
 
+        <div class="hero-image">
+            <img src="https://thumbs.dreamstime.com/b/pair-men-s-casual-white-shoes-marble-background-pair-men-s-casual-white-shoes-marble-background-404782427.jpg" alt="Shoes">
+        </div>
 
+    </div>
+
+</section>
 
 </main>
-
-<script>
-
-    function gonext() {
-        window.location.href="{% url 'import_success' %}"
-        
-    }
-</script>
 
 {% endblock %}
