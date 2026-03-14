@@ -2,22 +2,28 @@
 {% load static %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 
-<main class="main">
-    {% for p in products %}
-    <section class="sec1">
-        <a href="{% url 'product_detail' p.id %}">
-        <div class="div1">
-            <img src="{{ p.image }}" alt="{{ p.name }}">
-            <h3>{{ p.name }}</h3>
-            <p>{{ p.category }}</p>
-            <p>$ {{ p.price }}</p>
-            <p>⭐{{ p.rating }} ratings</p>
-            <button>BUY NOW</button>
-        </div>
+<div class="product-container">
+
+    {% for product in products %}
+
+    <div class="product-card">
+
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+
+        <h3>{{ product.name }}</h3>
+
+        <p class="price">₹ {{ product.price }}</p>
+
+        <a href="{% url 'product_details' product.id %}" class="view-btn">
+            View Product
         </a>
-    </section>
+
+    </div>
+
     {% endfor %}
-</main>
-{% endblock %}
+
+</div>
+{% endblock%}
