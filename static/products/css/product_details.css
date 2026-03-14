@@ -1,50 +1,140 @@
-
-.product-detail {
-    margin-top: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 20px;
-    color: black;
+body{
+    background:#f5f5f5;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.big-img {
-    width: 450px;
-    height: 450px;
-    top: 30px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-top: -100px;
+
+/* MAIN PRODUCT CONTAINER */
+
+.product-detail{
+    width:80%;
+    margin:10px auto;
+
+    display:flex;
+    gap:40px;
+    align-items:center;
+
+    background:white;
+    padding:30px;
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-.info h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+
+/* IMAGE */
+
+.image-section{
+    flex:1;
+    display:flex;
+    justify-content:center;
 }
 
-.price {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.big-img{
+    width:100%;
+    max-width:350px;
+    height:auto;
+    object-fit:contain;
 }
 
-.desc {
-    margin-top: 15px;
-    line-height: 1.6;
+
+/* PRODUCT INFO */
+
+.info{
+    flex:1;
 }
+
+.info h1{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+
+/* PRICE */
+
+.price{
+    font-size:22px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+
+/* CATEGORY */
+
+.cat{
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+
+/* RATING */
+
+.rating{
+    margin-bottom:15px;
+}
+
+
+/* DESCRIPTION */
+
+.desc{
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+
+/* BUTTON SECTION */
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+
+/* BUY BUTTON */
 
 .buy{
-    background-color: aquamarine;
-    height: 35px;
-    width: 100px;
-    border-radius: 10px;
+    background:black;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.buy:hover{
+    background:#333;
 }
 
 
+/* WISHLIST */
+
 .wishlist{
-    height: 35px;
-    width: 180px;
-    background-color: white;
-    border-radius: 10px;
+    background:white;
+    border:1px solid black;
+    padding:10px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.wishlist:hover{
+    background:black;
+    color:white;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.product-detail{
+    flex-direction:column;
+    text-align:center;
+}
+
+.buttons{
+    justify-content:center;
+}
+
 }

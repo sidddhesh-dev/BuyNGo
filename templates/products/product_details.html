@@ -1,28 +1,35 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'products/css/product_details.css' %}">
 
+<link rel="stylesheet" href="{% static 'products/css/product_details.css' %}">
 
 <div class="product-detail">
 
-    <img src="{{ product.image }}" class="big-img">
+    <div class="image-section">
+        <img src="{{ product.image }}" alt="{{ product.name }}" class="big-img">
+    </div>
 
     <div class="info">
+
         <h1>{{ product.name }}</h1>
-        <p class="price">$ {{ product.price }}</p>
-        <p class="cat">Category: {{ product.catagory }}</p>
+
+        <p class="price">₹ {{ product.price }}</p>
+
+        <p class="cat"><strong>Category:</strong> {{ product.category }}</p>
+
+        <p class="rating">⭐ {{ product.rating }} ratings</p>
+
         <p class="desc">{{ product.description }}</p>
-        <p>⭐{{ product.rating }} ratings</p>
-         <section>
-            <button class="buy">BUY NOW</button>
-            <button class="wishlist"> ADD TO WISHLIST</button>
-        </section> 
+
+        <div class="buttons">
+            <button class="buy">Buy Now</button>
+            <button class="wishlist">Add to Wishlist</button>
+        </div>
+
     </div>
 
 </div>
-
 
 {% endblock %}
