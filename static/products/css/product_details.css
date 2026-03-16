@@ -4,8 +4,6 @@ body{
 }
 
 
-/* MAIN PRODUCT CONTAINER */
-
 .product-detail{
     width:80%;
     margin:10px auto;
@@ -21,13 +19,12 @@ body{
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-
-/* IMAGE */
-
 .image-section{
     flex:1;
     display:flex;
     justify-content:center;
+    height: 350px;
+    width: 350px;
 }
 
 .big-img{
@@ -36,9 +33,6 @@ body{
     height:auto;
     object-fit:contain;
 }
-
-
-/* PRODUCT INFO */
 
 .info{
     flex:1;
@@ -49,32 +43,22 @@ body{
     margin-bottom:10px;
 }
 
-
-/* PRICE */
-
 .price{
     font-size:22px;
     font-weight:bold;
     margin:10px 0;
 }
 
-
-/* CATEGORY */
-
 .cat{
     font-size:15px;
     margin-bottom:8px;
 }
-
-
-/* RATING */
 
 .rating{
     margin-bottom:15px;
 }
 
 
-/* DESCRIPTION */
 
 .desc{
     font-size:14px;
@@ -84,15 +68,12 @@ body{
 }
 
 
-/* BUTTON SECTION */
 
 .buttons{
     display:flex;
     gap:15px;
 }
 
-
-/* BUY BUTTON */
 
 .buy{
     background:black;
@@ -107,8 +88,6 @@ body{
     background:#333;
 }
 
-
-/* WISHLIST */
 
 .wishlist{
     background:white;
