@@ -23,11 +23,13 @@
 
         <p class="desc">{{ product.description }}</p>
 
-        <div class="buttons">
-            <button class="buy">Buy Now</button>
-            <button class="wishlist">Add to Wishlist</button>
-        </div>
+        <a href="{% url 'add_to_cart' product.id %}">
+            <button class="buy">Add to Cart</button>
+        </a>
 
+        <a href="{% url 'checkout' %}">
+            <button class="wishlist">Buy Now</button>
+        </a>
     </div>
 
 </div>

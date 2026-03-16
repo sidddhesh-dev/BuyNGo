@@ -27,3 +27,8 @@ def search_products(request):
         return JsonResponse(results, safe=False)
 
     return JsonResponse([], safe=False)
+
+def buy_now(request, id):
+    product = get_object_or_404(Products, id=id)
+    context = {"product": product}
+    return render(request, "products/checkout.html", context)
