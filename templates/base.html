@@ -31,9 +31,9 @@
 
     <div class="nav-right">
 
-        <div class="nav-search">
-            <input type="text" placeholder="Search products...">
-            <button>Search</button>
+       <div class="nav-search">
+        <input type="text" id="search-input" placeholder="Search products..." onkeyup="searchProduct()"> <button onclick="searchProduct()">Search</button> 
+        <div id="search-results" class="search-results"></div>
         </div>
 
         <div class="nav-icons">
