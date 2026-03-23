@@ -106,7 +106,7 @@ function searchProduct() {
         return;
     }
 
-    fetch(`/search-products/?q=${query}`)
+    fetch(`/products/search-products/?q=${query}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -126,7 +126,7 @@ function searchProduct() {
 }
 
 function goToProduct(id) {
-    window.location.href = `/product/${id}/`; // change if your URL differs
+    window.location.href = `/product/${id}/`; 
 }
 </script>
 </html>
