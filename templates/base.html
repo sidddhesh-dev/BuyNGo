@@ -26,7 +26,7 @@
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'product_list' %}">Shop</a>
         <a href="#">Categories</a>
-        <a href="#">Contact</a>
+        <a href="{% url 'developer' %}">Contact</a>
     </div>
 
     <div class="nav-right">
@@ -96,4 +96,37 @@
 </footer>
 
 </body>
+<script>
+function searchProduct() {
+    let query = document.getElementById("search-input").value;
+    let resultsBox = document.getElementById("search-results");
+
+    if (query.length === 0) {
+        resultsBox.innerHTML = "";
+        return;
+    }
+
+    fetch(`/search-products/?q=${query}`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+
+            if (data.length === 0) {
+                html = "<p>No products found</p>";
+            } else {
+                data.forEach(product => {
+                    html += `<div class="search-item" onclick="goToProduct(${product.id})">
+                                ${product.name}
+                             </div>`;
+                });
+            }
+
+            resultsBox.innerHTML = html;
+        });
+}
+
+function goToProduct(id) {
+    window.location.href = `/product/${id}/`; // change if your URL differs
+}
+</script>
 </html>

@@ -19,7 +19,7 @@ def import_products(request):
     return redirect('product_list')
 
 def search_products(request):
-    query = request.GET.get('q')
+    query = request.GET.get('q', '').strip()
 
     if query:
         products = Products.objects.filter(name__icontains=query)[:5]
