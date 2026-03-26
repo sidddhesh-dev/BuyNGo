@@ -10,7 +10,6 @@ def add_to_wishlist(request, id):
 
     product = get_object_or_404(Products, id=id)
 
-    # check if already exists
     already = Wishlist.objects.filter(user=request.user, product=product).exists()
 
     if already:
