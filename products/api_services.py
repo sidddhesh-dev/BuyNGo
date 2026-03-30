@@ -1,54 +1,39 @@
-import requests
+import json
+import os
 from .models import Products
-
-API_URL = "https://dummyjson.com/products?limit=100"
-
 
 def fetch_data():
     try:
-        response = requests.get(API_URL)
+        file_path = os.path.join(os.path.dirname(__file__), 'products.json')
 
-        if response.status_code != 200:
-            print("❌ API request failed")
-            return
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
 
-        data = response.json()
-
-        products = data.get("products", [])
+   
+        products = data  
 
         if not products:
-            print("❌ No products found in API")
+            print("❌ No products found in JSON")
             return
 
-        # 🔥 Optional: Clear old data
+        # clear old data
         Products.objects.all().delete()
 
         count = 0
 
         for item in products:
-            title = item.get("title", "").lower()
-            category = item.get("category", "").lower()
+            Products.objects.create(
+                api_id=item.get('api_id'),
+                name=item.get('name'),
+                description=item.get('description'),
+                price=item.get('price'),
+                image=item.get('image'),
+                category=item.get('category'),
+                rating=item.get('rating'),
+            )
+            count += 1
 
-            # 🔥 FILTER ONLY SHOES
-            if (
-                "shoe" in title or
-                "sneaker" in title or
-                "footwear" in category
-            ):
-                Products.objects.create(
-                    api_id=item.get("id"),
-                    name=item.get("title", ""),
-                    description=item.get("description", ""),
-                    price=item.get("price", 0),
-                    image=item.get("thumbnail", ""),
-                    category=category,
-                    rating=item.get("rating", 0),
-                )
-
-                print("✅ Added:", item.get("title"))
-                count += 1
-
-        print(f"\n🔥 {count} shoes imported successfully")
+        print(f"✅ {count} products inserted successfully")
 
     except Exception as e:
-        print("❌ Error:", str(e))
+        print("❌ Error:", e)
