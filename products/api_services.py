@@ -3,10 +3,7 @@ import os
 from .models import Products
 
 def fetch_data():
-    print("🚀 FUNCTION CALLED")
-
     file_path = os.path.join(os.path.dirname(__file__), 'products.json')
-    print("📂 File path:", file_path)
 
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -26,8 +23,6 @@ def fetch_data():
                 category=item.get('category'),
                 rating=item.get('rating'),
             )
-
-        print("✅ INSERT DONE")
 
     except Exception as e:
         print("❌ ERROR:", e)
