@@ -52,59 +52,149 @@
         </p>
     </div>
 
-    <div class="category-container">
+<div class="category-container">
 
-        <!-- Card 1 -->
-        <div class="category-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbUUrFD7qATh1Or4N-SdSi9a5BZSus_w4FZg&s" alt="">
-            <div class="category-overlay">
-                <h3>Casual Shoes</h3>
-                <p>40-80% OFF</p>
-                <span>Shop Now</span>
-            </div>
+    <!-- Sneakers -->
+    <a href="{% url 'product_list' %}?category=Sneakers" class="category-card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="">
+        <div class="category-overlay">
+            <h3>Sneakers</h3>
+            <p>30-60% OFF</p>
+            <span>Shop Now</span>
         </div>
+    </a>
 
-        <!-- Card 2 -->
-        <div class="category-card">
-            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="">
-            <div class="category-overlay">
-                <h3>Sports Shoes</h3>
-                <p>30-70% OFF</p>
-                <span>Shop Now</span>
-            </div>
+    <!-- Running -->
+    <a href="{% url 'product_list' %}?category=Running" class="category-card">
+        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5" alt="">
+        <div class="category-overlay">
+            <h3>Running</h3>
+            <p>30-70% OFF</p>
+            <span>Shop Now</span>
         </div>
+    </a>
 
-        <!-- Card 3 -->
-        <div class="category-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpC7r14mPeoxSgPQwRL1vyfaM37-8zl6yXQQ&s" alt="">
-            <div class="category-overlay">
-                <h3>Stakes Shoes</h3>
-                <p>50-80% OFF</p>
-                <span>Shop Now</span>
-            </div>
+    <!-- Casual -->
+    <a href="{% url 'product_list' %}?category=Casual" class="category-card">
+        <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a" alt="">
+        <div class="category-overlay">
+            <h3>Casual</h3>
+            <p>40-80% OFF</p>
+            <span>Shop Now</span>
         </div>
+    </a>
 
-        <!-- Card 4 -->
-        <div class="category-card">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="">
-            <div class="category-overlay">
-                <h3>Sneakers</h3>
-                <p>30-60% OFF</p>
-                <span>Shop Now</span>
-            </div>
+    <!-- Skate -->
+    <a href="{% url 'product_list' %}?category=Skate" class="category-card">
+        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77" alt="">
+        <div class="category-overlay">
+            <h3>Skate</h3>
+            <p>40-75% OFF</p>
+            <span>Shop Now</span>
         </div>
+    </a>
 
-        <!-- Card 5 -->
-        <div class="category-card">
-            <img src="https://rukminim2.flixcart.com/image/480/640/xif0q/shoe/9/j/o/7-dk3285-41-danwalk-navy-original-imahgxzgjxxjfz9w.jpeg?q=90" alt="">
-            <div class="category-overlay">
-                <h3>Daily Wear</h3>
-                <p>40-75% OFF</p>
-                <span>Shop Now</span>
-            </div>
+    <!-- Basketball -->
+    <a href="{% url 'product_list' %}?category=Basketball" class="category-card">
+        <img src="https://images.unsplash.com/photo-1556906781-9a412961a28c" alt="">
+        <div class="category-overlay">
+            <h3>Basketball</h3>
+            <p>50-80% OFF</p>
+            <span>Shop Now</span>
         </div>
+    </a>
 
-    </div>
+    <!-- Boots -->
+    <a href="{% url 'product_list' %}?category=Boots" class="category-card">
+        <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0" alt="">
+        <div class="category-overlay">
+            <h3>Boots</h3>
+            <p>50-80% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+    <!-- Sandals -->
+    <a href="{% url 'product_list' %}?category=Sandals" class="category-card">
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2" alt="">
+        <div class="category-overlay">
+            <h3>Sandals</h3>
+            <p>30-60% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+    <!-- Trail Running -->
+    <a href="{% url 'product_list' %}?category=Trail%20Running" class="category-card">
+        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="">
+        <div class="category-overlay">
+            <h3>Trail Running</h3>
+            <p>40-70% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+    <!-- Hiking -->
+    <a href="{% url 'product_list' %}?category=Hiking" class="category-card">
+        <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2" alt="">
+        <div class="category-overlay">
+            <h3>Hiking</h3>
+            <p>40-70% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+    <!-- Training -->
+    <a href="{% url 'product_list' %}?category=Training" class="category-card">
+        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570" alt="">
+        <div class="category-overlay">
+            <h3>Training</h3>
+            <p>30-60% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+    <!-- Walking -->
+    <a href="{% url 'product_list' %}?category=Walking" class="category-card">
+        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86" alt="">
+        <div class="category-overlay">
+            <h3>Walking</h3>
+            <p>30-60% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+    <!-- Racing -->
+    <a href="{% url 'product_list' %}?category=Racing" class="category-card">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="">
+        <div class="category-overlay">
+            <h3>Racing</h3>
+            <p>50-80% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+    <!-- Tennis -->
+    <a href="{% url 'product_list' %}?category=Tennis" class="category-card">
+        <img src="https://images.unsplash.com/photo-1562183241-b937e9102303" alt="">
+        <div class="category-overlay">
+            <h3>Tennis</h3>
+            <p>30-60% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+    <!-- Football -->
+    <a href="{% url 'product_list' %}?category=Football" class="category-card">
+        <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb" alt="">
+        <div class="category-overlay">
+            <h3>Football</h3>
+            <p>30-60% OFF</p>
+            <span>Shop Now</span>
+        </div>
+    </a>
+
+</div>
 
    
     <div class="category-actions-bottom">
