@@ -108,7 +108,7 @@
 
 /* CATEGORY SECTION */
 .category-section {
-    padding: 60px 40px;
+    padding: 1px 40px;
     background: #f9f9f9;
     text-align: center;
 }
@@ -125,15 +125,15 @@
 
 .category-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* THIS centers last row */
     gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
 }
 
 .category-card {
-    position: relative;
-    min-width: 220px;
+    width: 200px;
     height: 300px;
+    position: relative;
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s;
@@ -195,7 +195,8 @@
 
 /* PROMO SECTION */
 .promo-section {
-    padding: 80px 20px;
+    margin-top: 20px;
+    padding: 40px 50px;
     text-align: center;
     background: #111;
     color: white;
