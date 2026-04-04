@@ -5,8 +5,21 @@ from .api_services import fetch_data
 
 
 def product_list(request):
+    category = request.GET.get('category')
+
     products = Products.objects.all()
-    return render(request, 'products/products.html', {"products": products})
+
+    if category:
+        products = products.filter(category__iexact=category)
+
+    return render(request, 'products/category_products.html', {
+        "products": products,
+        "selected_category": category
+    })
+
+# def product_list(request):
+#     products = Products.objects.all()
+#     return render(request, 'products/products.html', {"products": products})
 
 
 def product_details(request, id):
