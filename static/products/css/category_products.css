@@ -17,36 +17,80 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* KEY FIX */
+    height: 100%;
 
- .card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
 
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* Image */
 .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-        }
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #f9f9f9;
+    padding: 15px;
+}
 
-.card h3 {
-            font-size: 16px;
-        }
+/* Middle content */
+.card-content {
+    padding: 15px;
+    flex-grow: 1; /* pushes footer down */
+}
 
+.card-content h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.card-content p {
+    font-size: 13px;
+    color: #555;
+}
+
+.rating {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Bottom section */
+.card-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+/* Price */
 .price {
-            color: green;
-            font-weight: bold;
-        }
+    font-size: 18px;
+    color: #16a34a;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
+/* Button */
 .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 12px;
-            background: black;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+    display: inline-block;
+    padding: 10px 14px;
+    background: black;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #333;
+}
