@@ -103,7 +103,7 @@
     "name": "Adidas Stan Smith",
     "description": "The Adidas Stan Smith is a clean, minimal leather tennis shoe with a perforated 3-stripe design. Originally a tennis shoe, now a timeless streetwear essential worn worldwide.",
     "price": 95.00,
-    "image": "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVWb7NHRjNfsGar4bVaipYTMHTcFoD5NIqnQ&s",
     "category": "Casual",
     "rating": 4.5
   },
@@ -175,7 +175,7 @@
     "name": "Hoka Clifton 9",
     "description": "The Hoka Clifton 9 delivers an exceptionally lightweight, cushioned ride with a full-compression EVA midsole. The best daily trainer for runners seeking maximum comfort.",
     "price": 145.00,
-    "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJdMojEqftWyg4nEm5QbdiPBxWVDdXb8nuFg&s",
     "category": "Running",
     "rating": 4.8
   },
@@ -184,7 +184,7 @@
     "name": "Nike Pegasus 40",
     "description": "The Nike Pegasus 40 is built for everyday running with React foam cushioning and a wider forefoot for a more natural feel. Mesh upper provides targeted breathability.",
     "price": 130.00,
-    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFbA6OFWAUxqrvSYcWP_koyQLW0u2FTItQZQ&s",
     "category": "Running",
     "rating": 4.6
   },
@@ -211,7 +211,7 @@
     "name": "Under Armour HOVR Phantom 3",
     "description": "The UA HOVR Phantom 3 features HOVR technology to help maintain energy return while providing a 'zero gravity feel' that eliminates impact to keep you running longer.",
     "price": 140.00,
-    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp3KVl_vBrS1X-Y72_M07K3QMpfYplcMSaiw&s",
     "category": "Running",
     "rating": 4.5
   },
@@ -247,7 +247,7 @@
     "name": "New Balance Fresh Foam 1080v13",
     "description": "The New Balance Fresh Foam 1080v13 features ultra-cushioned Fresh Foam X midsole for an incredible underfoot experience. Premium knit upper and a plush tongue for next-level comfort.",
     "price": 165.00,
-    "image": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUbdwstBA77FNwPpa8xzVaj19T29WDoqWOg&s",
     "category": "Running",
     "rating": 4.7
   },
