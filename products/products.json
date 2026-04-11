@@ -85,7 +85,7 @@
     "name": "Saucony Ride 15",
     "description": "The Saucony Ride 15 offers PWRRUN cushioning for a smooth, balanced ride. Ideal for daily training runs with a breathable engineered mesh upper and durable outsole.",
     "price": 130.00,
-    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600",
+    "image": "https://believeintherun.com/wp-content/uploads/2023/02/saucony-kinvara-14-cover.jpg",
     "category": "Running",
     "rating": 4.5
   },
@@ -229,7 +229,7 @@
     "name": "Nike React Infinity Run 4",
     "description": "The Nike React Infinity Run 4 is designed to help reduce injury and keep you running. Wider base and React foam cushioning provide stability and a smooth heel-to-toe transition.",
     "price": 160.00,
-    "image": "https://assets.myntassets.com/assets/images/28282920/2024/3/15/cade1871-06cb-46ef-913a-1bf36e6a74751710444748827NikeInfinityRN4MensRoadRunningShoes1.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWr8Fx5JOFTn4ZzARZT7VGWKrymu70UvWHw&s",
     "category": "Running",
     "rating": 4.6
   },
@@ -238,7 +238,7 @@
     "name": "Reebok Nano X3",
     "description": "The Reebok Nano X3 is built for cross-training with a stable base, flexible forefoot, and breathable upper. Handles everything from weightlifting to HIIT with ease.",
     "price": 130.00,
-    "image": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIkJ3PuxV4_PCX_WPVR-H8YBg5TWPO4SvpUA&s",
     "category": "Training",
     "rating": 4.5
   },
@@ -265,7 +265,7 @@
     "name": "On Cloud 5",
     "description": "The On Cloud 5 features CloudTec cushioning with a Zero-Gravity foam base for soft landings and explosive takeoffs. Lightweight and stylish for running and everyday wear.",
     "price": 140.00,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTaZKoKBh54tgk6RDn4xzIo5XybqpseEq6g&s",
+    "image": "https://cdn.fleetfeet.com/a:1.7777777777778-f:cover-w:1600/assets/oncloud5header.jpeg?s=3fa17be6",
     "category": "Running",
     "rating": 4.6
   },
@@ -319,7 +319,7 @@
     "name": "Clarks Desert Boot",
     "description": "The Clarks Desert Boot is a two-eyelet suede chukka boot with crepe sole that has been a wardrobe staple since 1950. Simple, elegant, and endlessly versatile.",
     "price": 130.00,
-    "image": "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsKPmYWQneLQE8JVbdM3SK7rC_c20bLrUphA&s",
     "category": "Boots",
     "rating": 4.4
   },
@@ -328,7 +328,7 @@
     "name": "Nike ZoomX Vaporfly Next% 3",
     "description": "The Nike ZoomX Vaporfly Next% 3 is engineered for elite marathon runners with a ZoomX foam midsole and carbon fiber plate for maximum energy return and record-breaking speed.",
     "price": 250.00,
-    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xoY8CFWCca35Qr828LADFcDpsjFJ6D_0JA&s",
     "category": "Racing",
     "rating": 4.9
   },
@@ -337,7 +337,7 @@
     "name": "Adidas Samba OG",
     "description": "The Adidas Samba OG is a classic indoor soccer shoe turned streetwear staple. Leather upper with suede overlays, Trefoil logo tongue label, and a gum rubber outsole.",
     "price": 100.00,
-    "image": "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600",
+    "image": "https://assets.myntassets.com/w_360,q_50,,dpr_2,fl_progressive,f_webp/assets/images/26519254/2024/4/17/5c9680dd-e5b5-4c50-a518-24385447456b1713335052215-ADIDAS-Originals-Women-Samba-OG-Leather-Sneakers-62817133350-1.jpg",
     "category": "Casual",
     "rating": 4.7
   },
@@ -346,7 +346,7 @@
     "name": "Hoka Bondi 8",
     "description": "The Hoka Bondi 8 is the brand's most cushioned road shoe, featuring a full EVA midsole and extended heel. Perfect for recovery runs and walking long distances in comfort.",
     "price": 165.00,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdWi8bQKrONTnlezLbfFt6GBWw_77DHCmsRA&s",
+    "image": "https://m.media-amazon.com/images/I/51-PoacUb0L._AC_UY1000_.jpg",
     "category": "Running",
     "rating": 4.7
   },
@@ -373,7 +373,7 @@
     "name": "Nike Free Run 5.0",
     "description": "The Nike Free Run 5.0 features a flexible sole that expands and contracts with every movement. Lightweight mesh upper and minimal cushioning for a barefoot-like running experience.",
     "price": 100.00,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPYl8KaDsIvN-sEPh0I-VEmtPHhsvr9JFndw&s",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZq1Hg_QrimNQ-esnDvL0pce6jD_DfGFJwKQ&s",
     "category": "Running",
     "rating": 4.3
   },
@@ -400,7 +400,7 @@
     "name": "Saucony Kinvara 14",
     "description": "The Saucony Kinvara 14 is a lightweight, fast daily trainer with PWRRUN cushioning and a low heel-to-toe drop. Perfect for tempo runs and race day performance.",
     "price": 110.00,
-    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd2IQTymQacuj0NQFOr9ZLXlygVf1WyTlbZg&s",
     "category": "Running",
     "rating": 4.5
   },
@@ -427,7 +427,7 @@
     "name": "On Cloudrunner 2",
     "description": "The On Cloudrunner 2 provides structured support and CloudTec cushioning for runners who need stability without sacrificing speed. Breathable mesh upper and durable rubber outsole.",
     "price": 150.00,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfYhjDqkkS0K2Ce59u92hfq159PI2kMLo9Fw&s",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsJ050NkvQxoyKikoSHYr42ZcDnRJKGKJnJQ&s",
     "category": "Running",
     "rating": 4.5
   },
@@ -436,7 +436,7 @@
     "name": "Reebok Club C 85",
     "description": "The Reebok Club C 85 is a clean leather tennis shoe with vintage styling. Die-cut EVA midsole and padded foam sockliner provide lightweight cushioning and comfort.",
     "price": 80.00,
-    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfYhjDqkkS0K2Ce59u92hfq159PI2kMLo9Fw&s",
     "category": "Casual",
     "rating": 4.3
   },
@@ -445,7 +445,7 @@
     "name": "Nike Air Zoom Alphafly Next% 2",
     "description": "The Nike Air Zoom Alphafly Next% 2 is the pinnacle of marathon racing footwear. Twin Zoom Air pods and ZoomX foam beneath a carbon fiber plate deliver unmatched propulsion.",
     "price": 275.00,
-    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xoY8CFWCca35Qr828LADFcDpsjFJ6D_0JA&s",
     "category": "Racing",
     "rating": 5.0
   },
@@ -481,7 +481,7 @@
     "name": "Puma Clyde Court",
     "description": "The Puma Clyde Court is a basketball shoe with a leather upper and ProFoam midsole for responsive cushioning. Inspired by Puma's rich basketball heritage with Walt Clyde Frazier.",
     "price": 110.00,
-    "image": "https://images.unsplash.com/photo-1578116922645-3976907a7671?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfYhjDqkkS0K2Ce59u92hfq159PI2kMLo9Fw&s",  
     "category": "Basketball",
     "rating": 4.3
   },
@@ -493,7 +493,7 @@
     "image": "https://images-cdn.ubuy.co.nl/68d3e6968293356a640cfbfa-nike-air-max-90-shoes-jewel.jpg",
     "category": "Sneakers",
     "rating": 4.6
-  },
+  },        
   {
     "api_id": 56,
     "name": "Adidas Ultraboost Light",
