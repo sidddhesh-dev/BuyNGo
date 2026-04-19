@@ -222,6 +222,36 @@
 
 </section>
 
+<section class="info-section">
+    <div class="info-container">
+
+        <!-- Card 1 -->
+        <div class="info-card">
+            <img src="{% static 'images/why-us.jpg' %}" alt="Why Soulmates">
+            <h3>Why Soulmates?</h3>
+            <p>We craft premium footwear focused on comfort, durability, and timeless style.</p>
+            <a href="{% url 'about' %}" class="info-btn">Learn More</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="info-card">
+            <img src="{% static 'images/categories.jpg' %}" alt="Categories">
+            <h3>Explore Categories</h3>
+            <p>Browse a wide range of collections designed for every occasion and need.</p>
+            <a href="{% url 'categories' %}" class="info-btn">View Categories</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="info-card">
+            <img src="{% static 'images/developer.jpg' %}" alt="Developer">
+            <h3>Developer</h3>
+            <p>Meet the creator behind SOULMATES and explore the tech powering this platform.</p>
+            <a href="{% url 'developer' %}" class="info-btn">Know More</a>
+        </div>
+
+    </div>
+</section>
+
 </main>
 
 {% endblock %}
