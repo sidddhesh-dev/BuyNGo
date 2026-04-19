@@ -9,8 +9,8 @@ def developer(request):
 def about(request):
     return render(request, 'home/about.html')
 
-def categories(request):
-    return render(request, 'home/categories.html')
+def features(request):
+    return render(request, 'home/features.html')
 
 def developer(request):
     return render(request, 'home/developer.html')
