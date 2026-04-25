@@ -850,7 +850,7 @@
     "name": "Keen Targhee III Waterproof",
     "description": "The Keen Targhee III Waterproof is a rugged hiking boot with KEEN.DRY waterproof membrane and KEEN All-Terrain rubber outsole. Built for multi-day hiking adventures.",
     "price": 150.00,
-    "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=600",
+    "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600",
     "category": "Hiking",
     "rating": 4.6
   },
@@ -859,7 +859,7 @@
     "name": "Nike Cortez",
     "description": "The Nike Cortez is the first shoe ever produced by Nike. A timeless classic with a leather upper, foam midsole, and rubber outsole. An enduring symbol of sport and culture.",
     "price": 90.00,
-    "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600",
+    "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=600",
     "category": "Casual",
     "rating": 4.4
   },
