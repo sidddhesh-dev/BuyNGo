@@ -1,8 +1,16 @@
 /* main hero section */
 
-.hero{
-    padding:60px 10%;
-    background:#f8f9fa;
+.hero {
+    padding: 100px 10%;
+    
+    
+    background: url("https://media.istockphoto.com/id/1491695398/photo/white-sneakers-on-a-yellow-background-fashion-unisex-sneakers-are-sports-shoes-for-an-active.jpg?s=612x612&w=is&k=20&c=KnARcjLAHaq6eS5hk07ziT8fj2OjE1-zYY1z33Eigag=") no-repeat center center/cover;
+    
+    /* PARALLAX EFFECT */
+    background-attachment: fixed;
+
+    position: relative;
+    color: white;
 }
 
 /* layout */
@@ -23,6 +31,7 @@
 .hero-text h1{
     font-size:50px;
     font-weight:700;
+
     margin-bottom:20px;
     color:#111;
 }
@@ -106,10 +115,10 @@
 
 }
 
-/* CATEGORY SECTION */
+
 .category-section {
     padding: 1px 40px;
-    background: #f9f9f9;
+    background: transparent;
     text-align: center;
 }
 
