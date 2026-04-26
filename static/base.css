@@ -7,7 +7,7 @@ box-sizing:border-box;
 body{
 overflow-x:hidden;
 font-family:'Poppins',sans-serif;
-background:#f7f7f7;
+background: url("https://img.freepik.com/premium-photo/fashion-black-unbranded-sneaker-with-laces-flying-dark-background-black-sport-running-shoes-levitate-air_179369-751.jpg") no-repeat center center fixed;
 }
 
 .navbar{

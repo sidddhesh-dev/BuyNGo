@@ -1,14 +1,11 @@
 /* main hero section */
-
+body {
+    background: url("https://img.freepik.com/premium-photo/fashion-black-unbranded-sneaker-with-laces-flying-dark-background-black-sport-running-shoes-levitate-air_179369-751.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
 .hero {
     padding: 100px 10%;
-    
-    
-    background: url("https://media.istockphoto.com/id/1491695398/photo/white-sneakers-on-a-yellow-background-fashion-unisex-sneakers-are-sports-shoes-for-an-active.jpg?s=612x612&w=is&k=20&c=KnARcjLAHaq6eS5hk07ziT8fj2OjE1-zYY1z33Eigag=") no-repeat center center/cover;
-    
-    /* PARALLAX EFFECT */
     background-attachment: fixed;
-
     position: relative;
     color: white;
 }
@@ -26,6 +23,7 @@
 
 .hero-text{
     flex:1;
+    color: rgb(255, 255, 255);
 }
 
 .hero-text h1{
@@ -33,12 +31,12 @@
     font-weight:700;
 
     margin-bottom:20px;
-    color:#111;
+    color:#fefefe;
 }
 
 .hero-text p{
     font-size:18px;
-    color:#555;
+    color:#ffffff;
     margin-bottom:30px;
     line-height:1.6;
 }
@@ -48,6 +46,7 @@
 .hero-buttons{
     display:flex;
     gap:15px;
+    
 }
 
 .btn{
@@ -63,11 +62,14 @@
 
 .primary-btn{
     background:#000;
-    color:white;
+    border:  1px solid white;
+    color: white;
+    
 }
 
 .primary-btn:hover{
-    background:#333;
+    background:#212121;
+    
 }
 
 /* secondary button */
@@ -111,6 +113,7 @@
 
 .hero-text h1{
     font-size:38px;
+    
 }
 
 }
@@ -125,10 +128,11 @@
 .category-header h2 {
     font-size: 28px;
     letter-spacing: 2px;
+    color: whitesmoke;
 }
 
 .category-subtext {
-    color: gray;
+    color: rgb(255, 255, 255);
     margin-bottom: 30px;
 }
 
