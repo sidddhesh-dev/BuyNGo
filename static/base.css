@@ -7,7 +7,6 @@ box-sizing:border-box;
 body{
 overflow-x:hidden;
 font-family:'Poppins',sans-serif;
-background: url("https://img.freepik.com/premium-photo/fashion-black-unbranded-sneaker-with-laces-flying-dark-background-black-sport-running-shoes-levitate-air_179369-751.jpg") no-repeat center center fixed;
 }
 
 .navbar{
@@ -20,14 +19,15 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 
-padding:18px 8%;
+padding:10px 8%;
 background:white;
 
 box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
 .logo{
-font-size:28px;
+font-size:12px;
+
 font-weight:700;
 letter-spacing:1px;
 margin-left: -80px;
@@ -42,7 +42,7 @@ margin-right: -50px;
 .nav-center a{
 text-decoration:none;
 color:#333;
-font-size:17px;
+font-size:15px;
 font-weight:500;
 }
 
@@ -99,7 +99,7 @@ margin-right: -60px;
     left: 0;
     width: 200px;              /* match input */
     background: white;
-    border: 1px solid #ccc;
+    border: 1px solid #fffefe;
     z-index: 9999;
     max-height: 250px;
     overflow-y: auto;
@@ -127,7 +127,7 @@ align-items:center;
 gap:6px;
 text-decoration:none;
 color:#333;
-font-size:15px;
+font-size:10px;
 }
 
 .icon-link img{
