@@ -199,11 +199,11 @@ body {
 }
 
 .developer-btn {
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     padding: 10px 20px;
     border-radius: 6px;
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 /* PROMO SECTION */
