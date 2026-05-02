@@ -715,7 +715,7 @@
     "name": "Vans Authentic",
     "description": "The Vans Authentic is the first Vans shoe ever made. A low-top lace-up silhouette with canvas upper and Vans signature waffle outsole. Clean, classic, and versatile.",
     "price": 60.00,
-    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5QE_Ga0q4fIRkIeDeaaKmnTqwDrL_Bborgg&s",
     "category": "Casual",
     "rating": 4.4
   },
@@ -724,7 +724,7 @@
     "name": "Nike Air Zoom Pegasus Trail 5",
     "description": "The Nike Air Zoom Pegasus Trail 5 brings Pegasus cushioning to the trails with a grippy lug outsole and reinforced overlays for protection on technical terrain.",
     "price": 135.00,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5QE_Ga0q4fIRkIeDeaaKmnTqwDrL_Bborgg&s",
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600",
     "category": "Trail Running",
     "rating": 4.5
   },
