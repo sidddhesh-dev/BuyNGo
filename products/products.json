@@ -697,7 +697,7 @@
     "name": "Adidas Handball Spezial",
     "description": "The Adidas Handball Spezial is a vintage indoor sports shoe with a suede upper and distinctive gum sole. Originally designed for handball, now a must-have casual lifestyle silhouette.",
     "price": 110.00,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfeuHDnKaDpQZXRznVEoSoj9cCIBQ21kxUxg&s",
+    "image": "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=600",
     "category": "Casual",
     "rating": 4.6
   },
@@ -706,7 +706,7 @@
     "name": "Hoka Arahi 7",
     "description": "The Hoka Arahi 7 is a lightweight stability running shoe with J-Frame technology to guide the foot through a natural motion path. Ideal for overpronators seeking comfort and control.",
     "price": 140.00,
-    "image": "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfeuHDnKaDpQZXRznVEoSoj9cCIBQ21kxUxg&s",
     "category": "Running",
     "rating": 4.6
   },
