@@ -1,2 +1,11 @@
-
-<h1>this is accoynt page</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form action="" method="POSt">
+    {% csrf_token %}
+    <input type="text" placeholder="enter username" name="username">
+    <input type="text" placeholder="enter password" name="password">
+    <button type="submit">Login</button>
+</form>
+<a href="#">you dont have account?</a>
+{% endblock %}
