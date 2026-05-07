@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<form action="" method="POSt">
-    {% csrf_token %}
-    <input type="text" placeholder="enter username" name="username">
-    <input type="text" placeholder="enter password" name="password">
-    <button type="submit">Login</button>
-</form>
-<a href="#">you dont have account?</a>
+<link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+
+<div class="login-container">
+
+    <div class="login-box">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Login to continue shopping on BuyNGo.</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <input type="text" placeholder="Enter Username" name="username">
+
+            <input type="password" placeholder="Enter Password" name="password">
+
+            <button type="submit">Login</button>
+        </form>
+
+        <a href="{% url 'register' %}" class="register-link">
+            You don't have an account?
+        </a>
+    </div>
+</div>
+
 {% endblock %}

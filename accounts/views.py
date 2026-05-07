@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.shortcuts import render,redirect
 from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth.decorators import login_required
 
 
 def user_register(request):
@@ -29,7 +30,7 @@ def user_register(request):
 def user_login(request):
     if request.method=="POST":
         username=request.POST.get("username")
-        password=request.POSt.get("password")
+        password=request.POST.get("password")
 
         user=authenticate(request,username=username,password=password)
 
@@ -38,12 +39,16 @@ def user_login(request):
             messages.success(request,"user login successful")
             return redirect('home')
 
-    
+    return render(request,'account/login.html')
 
-    
+def logout_user(request):
+    logout(request)
+    return redirect('login')
 
+@login_required
+def account_user(request):
+    return render(request,'account/account.html')
 
-    return render(request,'account/accounts.html')
 
 
 
