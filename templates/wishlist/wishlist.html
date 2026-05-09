@@ -2,8 +2,14 @@
 {% load static %}
 
 {% block content %}
+
+
 <link rel="stylesheet" href="{% static 'wishlist/css/wishlist.css' %}">
 <div class="info">
+
+{{% empty %}}
+<h2>NO elements in wishlist</h2>
+
     <h1>{{ product.name }}</h1>
     <p class="price">$ {{ product.price }}</p>
     <p class="cat">Category: {{ product.catagory }}</p>
@@ -13,11 +19,13 @@
     <section>
         <button class="buy">BUY NOW</button>
 
-        <a href="{% url 'add_to_wishlist' product.id %}"
-           class="wishlist btn btn-outline-danger">
-            ❤️ Add to Wishlist
-        </a>
+        <a  href="{% url 'add_to_wishlist' product.id %}">❤️ Add to Wishlist</a>
+
+            
+        
+
     </section>
 </div>
+
 
 {% endblock %}

@@ -161,15 +161,8 @@
     "category": "Trail Running",
     "rating": 4.7
   },
-  {
-    "api_id": 19,
-    "name": "Merrell Moab 3 Hiking Boot",
-    "description": "The Merrell Moab 3 is a versatile hiking boot with a Vibram TC5+ outsole for excellent traction. Waterproof membrane keeps feet dry across all weather conditions.",
-    "price": 120.00,
-    "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=600",
-    "category": "Hiking",
-    "rating": 4.6
-  },
+  
+  
   {
     "api_id": 20,
     "name": "Hoka Clifton 9",
