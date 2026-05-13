@@ -195,7 +195,7 @@
     "name": "Puma Suede Classic",
     "description": "The Puma Suede Classic is a streetwear icon that has been worn by the most influential figures in sport, music, and fashion since 1968. Soft suede upper with rubber cupsole.",
     "price": 70.00,
-    "image": "https://images.unsplash.com/photo-1578116922645-3976907a7671?w=600",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUY7l2JzsX-Dz2j_qpo60sUXOvK0Syf9xRoA&s",
     "category": "Casual",
     "rating": 4.3
   },
@@ -204,7 +204,7 @@
     "name": "Under Armour HOVR Phantom 3",
     "description": "The UA HOVR Phantom 3 features HOVR technology to help maintain energy return while providing a 'zero gravity feel' that eliminates impact to keep you running longer.",
     "price": 140.00,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUY7l2JzsX-Dz2j_qpo60sUXOvK0Syf9xRoA&s",
+    "image": "https://images.unsplash.com/photo-1578116922645-3976907a7671?w=600",
     "category": "Running",
     "rating": 4.5
   },
