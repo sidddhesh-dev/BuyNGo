@@ -20,6 +20,7 @@
         <p class="cat"><strong>Category:</strong> {{ product.category }}</p>
 
         <p class="rating">⭐ {{ product.rating }} ratings</p>
+        <a href="{% url 'add_to_wishlist' product.id %}">❤️</a>
 
         <p class="desc">{{ product.description }}</p>
 
