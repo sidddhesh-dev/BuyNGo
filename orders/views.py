@@ -2,12 +2,7 @@ from django.shortcuts import render
 from carts.models import CartItem
 
 def checkout(request):
+    return render(request,"orders/checkout.html")
 
-    if not request.session.session_key:
-        request.session.create()
-
-    session_key = request.session.session_key
-
-    items = CartItem.objects.filter(session_key=session_key)
-
-    return render(request,"orders/checkout.html",{"items":items})
+def orders(request):
+    return render(request,'orders/orders.html')

@@ -13,12 +13,11 @@
     <div class="account-page">
         <div class="sidebar">
 
-            <h2>BuyNGo</h2>
+            <h2>SoulMates</h2>
 
             <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">My Orders</a></li>
-                <li><a href="">Wishlist</a></li>
+                <li><a href="{% url 'home' %}">Start Shopping</a></li>
+                <li><a href="{% url 'orders' %}">My Orders</a></li>
                 <li><a href="{% url 'cart_page' %}">Cart</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
             </ul>
@@ -51,6 +50,7 @@
                     <p>🛒 Orders: 0</p>
                     <p>❤️ Wishlist Items: 0</p>
                     <p>👟 Cart Products: 0</p>
+                    <p>account credites :0</p>
                 </div>
 
             </div>
@@ -59,8 +59,8 @@
             <div class="actions">
 
                 <a href="{% url 'product_list' %}">Shop Shoes</a>
-                <a href="#">My Wishlist</a>
-                <a href="#">Track Orders</a>
+                <a href="{% url 'cart_page' %}">My Wishlist</a>
+                <a href="{% url 'orders' %}">Track Orders</a>
 
             </div>
 
