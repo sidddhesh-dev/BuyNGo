@@ -3,19 +3,26 @@ from django.http import JsonResponse
 from .models import Products
 from .api_services import fetch_data
 from django.contrib.auth.decorators import login_required
-
+from django.core.paginator import Paginator
 
 def product_list(request):
+
     category = request.GET.get('category')
 
-    products = Products.objects.all()
+    products = Products.objects.all().order_by('-id')
 
     if category:
         products = products.filter(category__iexact=category)
 
-    return render(request, 'products/category_products.html', {
-        "products": products,
-        "selected_category": category
+    # PAGINATION
+    paginator = Paginator(products, 10)
+
+    page_number = request.GET.get('page')
+
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'products/products.html', {
+        'page_obj': page_obj,
     })
 
 # def product_list(request):

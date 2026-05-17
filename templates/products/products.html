@@ -7,26 +7,84 @@
 
 <div class="product-container">
 
-    {% for product in products %}
+    {% for product in page_obj %}
 
     <div class="product-card">
 
-        <img src="{{ product.image }}" alt="{{ product.name }}">
+        <div class="image-wrapper">
 
-        <h3>{{ product.name }}</h3>
+            <img src="{{ product.image }}" alt="{{ product.name }}">
 
-        <p class="price">₹ {{ product.price }}</p>
+            <!-- HOVER CONTENT -->
+            <div class="hover-content">
 
-        <p class="rating">⭐ {{ product.rating }} ratings</p>
-        <p class="description">{{ product.description }}</p>
+                <p><strong>Gender:</strong> {{ product.gender }}</p>
 
-        <a href="{% url 'product_details' product.id %}" class="view-btn">
-            View Product
-        </a>
+                <p><strong>Best For:</strong></p>
+
+                <div class="best-for">
+
+                    {% for item in product.best_for %}
+                        <span>{{ item }}</span>
+                    {% endfor %}
+
+                </div>
+
+                <p><strong>Material:</strong> {{ product.material }}</p>
+
+                <p><strong>Waterproof:</strong>
+                    {% if product.waterproof %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="product-info">
+
+            <h3>{{ product.name }}</h3>
+
+            <p class="category">{{ product.category }}</p>
+
+            <p class="price">$ {{ product.price }}</p>
+
+            <p class="rating">⭐ {{ product.rating }}</p>
+
+            <a href="{% url 'product_details' product.id %}" class="view-btn">
+                View Product
+            </a>
+
+        </div>
 
     </div>
 
     {% endfor %}
 
 </div>
-{% endblock%}
+
+
+<!-- PAGINATION -->
+
+<div class="pagination">
+
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    <span class="current-page">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -5,32 +5,195 @@
 
 <link rel="stylesheet" href="{% static 'products/css/product_details.css' %}">
 
-<div class="product-detail">
+<div class="product-detail-container">
 
-    <div class="image-section">
-        <img src="{{ product.image }}" alt="{{ product.name }}" class="big-img">
+    <!-- LEFT SIDE -->
+    <div class="left-section">
+
+        <div class="main-image">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+        </div>
+
+        <!-- COLOR VARIANTS -->
+
+        {% if product.colors.all %}
+
+        <div class="color-section">
+
+            <h3>Available Colors</h3>
+
+            <div class="color-list">
+
+                <!-- {% for color in product.colors.all %}
+
+                <div class="color-item">
+
+                    <div
+                        class="color-circle"
+                        style="background: {{ color.hex }};"
+                    ></div>
+
+                    <span>{{ color.name }}</span>
+
+                </div>
+
+                {% endfor %} -->
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
     </div>
 
-    <div class="info">
+
+
+    <!-- RIGHT SIDE -->
+    <div class="right-section">
+
+        <p class="category">{{ product.category }}</p>
 
         <h1>{{ product.name }}</h1>
 
-        <p class="price">$ {{ product.price }}</p>
+        <div class="rating-stock">
 
-        <p class="cat"><strong>Category:</strong> {{ product.category }}</p>
+            <p class="rating">⭐ {{ product.rating }}</p>
 
-        <p class="rating">⭐ {{ product.rating }} ratings</p>
-        
+            {% if product.in_stock %}
+                <span class="stock in-stock">In Stock</span>
+            {% else %}
+                <span class="stock out-stock">Out Of Stock</span>
+            {% endif %}
 
-        <p class="desc">{{ product.description }}</p>
+        </div>
 
-        <a href="{% url 'add_to_cart' product.id %}">
-            <button class="buy">Add to Cart</button>
-        </a>
 
-        <a href="{% url 'checkout' %}">
-            <button class="wishlist">Buy Now</button>
-        </a>
+        <h2 class="price">₹ {{ product.price }}</h2>
+
+        <p class="description">
+            {{ product.description }}
+        </p>
+
+
+        <!-- PRODUCT DETAILS -->
+
+        <div class="details-grid">
+
+            <div class="detail-box">
+                <strong>Gender</strong>
+                <p>{{ product.gender }}</p>
+            </div>
+
+            <div class="detail-box">
+                <strong>Closure</strong>
+                <p>{{ product.closure_type }}</p>
+            </div>
+
+            <div class="detail-box">
+                <strong>Sole Type</strong>
+                <p>{{ product.sole_type }}</p>
+            </div>
+
+            <div class="detail-box">
+                <strong>Material</strong>
+                <p>{{ product.material }}</p>
+            </div>
+
+            <div class="detail-box">
+                <strong>Texture</strong>
+                <p>{{ product.texture }}</p>
+            </div>
+
+            <div class="detail-box">
+                <strong>Finish</strong>
+                <p>{{ product.finish }}</p>
+            </div>
+
+        </div>
+
+
+
+        <!-- SIZES -->
+
+        <div class="size-section">
+
+            <h3>Select Size</h3>
+
+            <div class="sizes">
+
+                {% for size in product.sizes %}
+
+                    <button class="size-btn">
+                        {{ size }}
+                    </button>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BEST FOR -->
+
+        <div class="best-for-section">
+
+            <h3>Best For</h3>
+
+            <div class="best-tags">
+
+                {% for item in product.best_for %}
+
+                    <span>{{ item }}</span>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div class="feature-section">
+
+            <h3>Key Features</h3>
+
+            <ul>
+
+                {% for feature in product.features %}
+
+                    <li>{{ feature }}</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <a href="{% url 'add_to_cart' product.id %}">
+                <button class="cart-btn">
+                    Add To Cart
+                </button>
+            </a>
+
+            <a href="{% url 'checkout' %}">
+                <button class="buy-btn">
+                    Buy Now
+                </button>
+            </a>
+
+        </div>
+
     </div>
 
 </div>
