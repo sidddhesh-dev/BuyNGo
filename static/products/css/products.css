@@ -1,156 +1,341 @@
-.product-container{
-    width: 95%;
-    margin: auto;
-    padding: 40px 0;
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-}
-
+/* =========================================
+   PRODUCT PAGE
+========================================= */
 
 .product-container{
     width: 96%;
+
     margin: auto;
-    padding: 30px 0;
+
+    padding: 35px 0 60px;
 
     display: grid;
 
     grid-template-columns: repeat(5, 1fr);
 
-    gap: 20px;
+    gap: 24px;
 }
+
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.product-card{
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid #ececec;
+
+    transition: 0.35s ease;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
 
 .product-card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.08);
 }
 
+
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
 
 .image-wrapper{
     position: relative;
+
     overflow: hidden;
+
+    background: #f7f7f7;
 }
 
 
 .image-wrapper img{
     width: 100%;
-    height: 300px;
+
+    height: 260px;
+
     object-fit: cover;
 
-    transition: 0.5s;
+    transition: 0.45s ease;
 }
 
 
 .product-card:hover img{
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 
-/* HOVER EFFECT */
+
+/* =========================================
+   HOVER CONTENT
+========================================= */
 
 .hover-content{
     position: absolute;
 
-    bottom: -100%;
-    left: 0;
+    inset: 0;
 
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0,0,0,0.82);
+    background: rgba(0,0,0,0.88);
 
     color: white;
 
-    padding: 20px;
+    padding: 18px;
 
-    transition: 0.5s;
+    opacity: 0;
 
-    overflow-y: auto;
+    transition: 0.35s ease;
+
+    overflow-y: hidden;
 }
 
 
 .product-card:hover .hover-content{
-    bottom: 0;
+    opacity: 1;
 }
 
 
-.best-for{
+.hover-content h4{
+    font-size: 18px;
+
+    margin-bottom: 16px;
+}
+
+
+.hover-content p{
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 10px;
+}
+
+
+.hover-best-for{
     display: flex;
     flex-wrap: wrap;
+
     gap: 8px;
-    margin: 10px 0;
+
+    margin-top: 16px;
 }
 
-.best-for span{
+
+.hover-best-for span{
     background: white;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 13px;
-}
 
+    color: black;
+
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
 
 .product-info{
-    padding: 18px;
-}
-
-
-.product-info h3{
-    font-size: 20px;
-    margin-bottom: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 
 .category{
-    color: gray;
+    color: #706f6f;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+
+.product-info h3{
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+    line-height: 1.4;
     margin-bottom: 10px;
+    min-height: 52px;
+}
+
+
+
+/* =========================================
+   PRICE + RATING
+========================================= */
+
+.price-rating{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: -35px;
 }
 
 
 .price{
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #408209;
 }
 
 
 .rating{
-    margin-bottom: 15px;
+    font-size: 14px;
+
+    color: #555;
 }
 
 
+
+/* =========================================
+   MINI DETAILS
+========================================= */
+
+.mini-details{
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+}
+
+
+.mini-details span{
+    background: #f3f3f3;
+
+    color: #444;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+
+/* =========================================
+   COLOR PREVIEW
+========================================= */
+
+.color-preview{
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 16px;
+}
+
+
+.color-circle{
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: var(--clr);
+
+    border: 2px solid #ddd;
+}
+
+
+
+/* =========================================
+   BEST FOR TAGS
+========================================= */
+
+.card-best-for{
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+
+.card-best-for small{
+    background: black;
+
+    color: white;
+
+    padding: 5px 10px;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+}
+
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
 .view-btn{
-    display: inline-block;
+    margin-top: auto;
+
+    text-align: center;
 
     text-decoration: none;
 
     background: black;
     color: white;
 
-    padding: 10px 18px;
+    padding: 13px;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
-    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
 }
 
 
 .view-btn:hover{
-    background: #333;
+    background: #222;
 }
 
 
-/* PAGINATION */
+
+/* =========================================
+   PAGINATION
+========================================= */
 
 .pagination{
     display: flex;
+
     justify-content: center;
     align-items: center;
 
-    gap: 15px;
+    gap: 12px;
 
-    margin: 40px 0;
+    margin: 50px 0 70px;
 }
 
 
@@ -162,10 +347,62 @@
 
     padding: 10px 16px;
 
-    border-radius: 8px;
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.pagination a:hover{
+    background: #222;
 }
 
 
 .current-page{
-    font-weight: bold;
+    font-weight: 600;
+
+    color: #111;
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1450px){
+
+    .product-container{
+        grid-template-columns: repeat(4,1fr);
+    }
+
+}
+
+
+@media(max-width:1100px){
+
+    .product-container{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .product-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:520px){
+
+    .product-container{
+        grid-template-columns: 1fr;
+    }
+
 }

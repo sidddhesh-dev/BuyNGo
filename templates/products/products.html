@@ -5,34 +5,44 @@
 
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 
+
+<!-- =========================
+     PRODUCT SECTION
+========================= -->
+
 <div class="product-container">
 
     {% for product in page_obj %}
 
     <div class="product-card">
 
+        <!-- IMAGE SECTION -->
+
         <div class="image-wrapper">
 
             <img src="{{ product.image }}" alt="{{ product.name }}">
 
-            <!-- HOVER CONTENT -->
+            <!-- HOVER DETAILS -->
+
             <div class="hover-content">
+                <p>
+                    <strong>Gender:</strong>
+                    {{ product.gender }}
+                </p>
 
-                <p><strong>Gender:</strong> {{ product.gender }}</p>
+                <p>
+                    <strong>Material:</strong>
+                    {{ product.material }}
+                </p>
 
-                <p><strong>Best For:</strong></p>
+                <p>
+                    <strong>Closure:</strong>
+                    {{ product.closure_type }}
+                </p>
 
-                <div class="best-for">
+                <p>
+                    <strong>Waterproof:</strong>
 
-                    {% for item in product.best_for %}
-                        <span>{{ item }}</span>
-                    {% endfor %}
-
-                </div>
-
-                <p><strong>Material:</strong> {{ product.material }}</p>
-
-                <p><strong>Waterproof:</strong>
                     {% if product.waterproof %}
                         Yes
                     {% else %}
@@ -40,22 +50,110 @@
                     {% endif %}
                 </p>
 
+                <!-- BEST FOR -->
+
+                <div class="hover-best-for">
+
+                    {% for item in product.best_for %}
+
+                        <span>{{ item }}</span>
+
+                    {% endfor %}
+
+                </div>
+
             </div>
 
         </div>
 
+
         <div class="product-info">
 
-            <h3>{{ product.name }}</h3>
 
-            <p class="category">{{ product.category }}</p>
+            <p class="category">
+                {{ product.category }}
+            </p>
 
-            <p class="price">$ {{ product.price }}</p>
 
-            <p class="rating">⭐ {{ product.rating }}</p>
+            <h3>
+                {{ product.name }}
+            </h3>
 
-            <a href="{% url 'product_details' product.id %}" class="view-btn">
+            <div class="price-rating">
+
+                <p class="price">
+                    $ {{ product.price }}
+                </p>
+
+                <p class="rating">
+                    ⭐ {{ product.rating }}
+                </p>
+
+            </div>
+
+
+
+            <!-- EXTRA DETAILS -->
+
+            <div class="mini-details">
+
+                <span>{{ product.gender }}</span>
+
+                {% if product.waterproof %}
+                    <span>Waterproof</span>
+                {% endif %}
+
+                {% if product.material %}
+                    <span>
+                        {{ product.material|truncatechars:15 }}
+                    </span>
+                {% endif %}
+
+            </div>
+
+
+
+            <!-- COLOR VARIANTS -->
+
+            {% if product.colors.all %}
+
+            <div class="color-preview">
+
+                {% for color in product.colors.all|slice:":4" %}
+
+                    <div class="color-circle"
+                         style="--clr: {{ color.hex }};">
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% endif %}
+
+
+
+            <!-- BEST FOR TAGS -->
+
+            <div class="card-best-for">
+
+                {% for item in product.best_for|slice:":2" %}
+
+                    <small>{{ item }}</small>
+
+                {% endfor %}
+
+            </div>
+
+
+
+            <!-- BUTTON -->
+
+            <a href="{% url 'product_details' product.id %}"
+               class="view-btn">
+
                 View Product
+
             </a>
 
         </div>
@@ -67,22 +165,45 @@
 </div>
 
 
-<!-- PAGINATION -->
+
+<!-- =========================
+     PAGINATION
+========================= -->
 
 <div class="pagination">
 
     {% if page_obj.has_previous %}
-        <a href="?page=1">First</a>
-        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+
+        <a href="?page=1">
+            First
+        </a>
+
+        <a href="?page={{ page_obj.previous_page_number }}">
+            Previous
+        </a>
+
     {% endif %}
 
+
     <span class="current-page">
-        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+        Page {{ page_obj.number }}
+        of
+        {{ page_obj.paginator.num_pages }}
+
     </span>
 
+
     {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+
+        <a href="?page={{ page_obj.next_page_number }}">
+            Next
+        </a>
+
+        <a href="?page={{ page_obj.paginator.num_pages }}">
+            Last
+        </a>
+
     {% endif %}
 
 </div>
