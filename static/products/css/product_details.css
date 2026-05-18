@@ -205,20 +205,15 @@
 .details-grid{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-
     gap: 10px;
-
-    margin-bottom: 35px;
+    margin-bottom: 7px;
 }
 
 
 .detail-box{
     background: #fafafa;
-
     border-radius: 18px;
-
-    padding: 18px 20px;
-
+    padding: 10px 15px;
     border: 1px solid #ececec;
 
     transition: 0.3s ease;
@@ -234,26 +229,20 @@
 
 .detail-box strong{
     display: block;
-
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
-
     color: #111;
-
     margin-bottom: 8px;
 }
 
 
 .detail-box p{
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
+    margin-top: -5px;
 }
 
 
-
-/* ===================================
-   SIZE SECTION
-=================================== */
 
 .size-section{
     margin-bottom: 35px;
@@ -261,7 +250,7 @@
 
 
 .size-section h3{
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 16px;
 }
 
@@ -269,13 +258,13 @@
 .sizes{
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 5px;
 }
 
 
 .size-btn{
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
 
     border-radius: 14px;
 
@@ -290,6 +279,9 @@
 
     transition: 0.3s ease;
 }
+.size-btn p {
+    font-size: 12px;
+}
 
 
 .size-btn:hover{
@@ -299,10 +291,6 @@
 
 
 
-/* ===================================
-   BEST FOR
-=================================== */
-
 .best-for-section{
     margin-bottom: 35px;
 }
@@ -311,41 +299,32 @@
 .best-for-section h3{
     font-size: 22px;
     margin-bottom: 16px;
+    margin-top: -30px;
 }
 
 
 .best-tags{
     display: flex;
     flex-wrap: wrap;
-
     gap: 12px;
+    margin-top: -15px;
 }
-
 
 .best-tags span{
     background: #111;
     color: white;
-
-    padding: 10px 18px;
-
+    padding: 6px 12px;
     border-radius: 30px;
-
     font-size: 14px;
 }
 
-
-
-/* ===================================
-   FEATURES
-=================================== */
-
 .feature-section{
     margin-bottom: 40px;
+    margin-top: -20px;
 }
 
-
 .feature-section h3{
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 18px;
 }
 
@@ -356,13 +335,13 @@
 
 
 .feature-section li{
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
     color: #555;
 
-    line-height: 1.7;
+    line-height: 1;
 
-    font-size: 15px;
+    font-size: 13px;
 }
 
 

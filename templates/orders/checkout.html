@@ -2,8 +2,113 @@
 {% load static %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'orders/css/checkout.css' %}">
 
-<h1>THis is checkout page</h1>
+<div class="checkout-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="checkout-left">
+
+        <h2>Checkout</h2>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="section">
+
+                <h3>Shipping Address</h3>
+
+                <div class="form-grid">
+
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+
+                    <input type="text" name="phone" placeholder="Phone Number" required>
+
+                    <input type="text" name="address_line1" placeholder="Address Line 1" required>
+
+                    <input type="text" name="address_line2" placeholder="Address Line 2">
+
+                    <input type="text" name="city" placeholder="City" required>
+
+                    <input type="text" name="state" placeholder="State" required>
+
+                    <input type="text" name="postal_code" placeholder="Postal Code" required>
+
+                    <input type="text" name="country" placeholder="Country" required>
+
+                </div>
+
+            </div>
+
+            <div class="section">
+
+                <h3>Payment Method</h3>
+
+                <div class="payment-options">
+
+                    <label>
+                        <input type="radio" name="payment_method" value="COD" checked>
+                        Cash On Delivery
+                    </label>
+
+                    <label>
+                        <input type="radio" name="payment_method" value="UPI">
+                        UPI
+                    </label>
+
+                    <label>
+                        <input type="radio" name="payment_method" value="Card">
+                        Credit/Debit Card
+                    </label>
+
+                </div>
+
+            </div>
+
+            <button type="submit" class="place-order-btn">
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="checkout-right">
+
+        <h3>Your Cart</h3>
+
+        {% for item in cart_items %}
+
+        <div class="cart-item">
+
+            <img src="{{ item.product.image }}" alt="{{ item.product.name }}">
+
+            <div>
+
+                <h4>{{ item.product.name }}</h4>
+
+                <p>Qty: {{ item.quantity }}</p>
+
+                <p>$ {{ item.product.price }}</p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="total-box">
+
+            <h2>Total: $ {{ total }}</h2>
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}
