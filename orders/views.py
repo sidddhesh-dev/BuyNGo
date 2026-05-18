@@ -62,5 +62,8 @@ def checkout(request):
         return redirect('orders_success')
     return render(request, "orders/checkout.html", {'cart_items': cart_items,'total': total})
 
-def orders(request):
+def orders_success(request):
     return render(request,'orders/orders_success.html')
+
+def orders(request):
+    return render(request,'orders/orders.html')
