@@ -1,17 +1,31 @@
 from django.shortcuts import render, redirect
 from carts.models import CartItem
-from .models import Address, Order, OrderItem
+from .models import Address, Order, OrderItem,Products
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
 
 
 @login_required
-def checkout(request):
-    cart_items = CartItem.objects.filter(
-        user=request.user
-    )
-    total = 0
-    for item in cart_items:
-        total += item.product.price * item.quantity
+def checkout(request,product_id=None):
+    if product_id:
+
+        product = Products.objects.get(id=product_id)
+
+        checkout_items = [
+            {
+                "product": product,
+                "quantity": 1
+            }
+        ]
+
+        total = product.price
+
+    else:
+        checkout_items = CartItem.objects.filter(user=request.user)
+        total = 0
+
+        for item in checkout_items:
+            total += item.product.price * item.quantity
 
     if request.method == "POST":
         full_name = request.POST.get('full_name')
@@ -43,17 +57,30 @@ def checkout(request):
             payment_method=payment_method,
         )
 
-        for item in cart_items:
+        for item in checkout_items:
+            if not product_id:
 
-            OrderItem.objects.create(
-                order=order,
-                product=item.product,
-                quantity=item.quantity,
-                price=item.product.price,
-            )
-        cart_items.delete()
-        return redirect('orders_success')
-    return render(request, "orders/checkout.html", {'cart_items': cart_items,'total': total})
+                OrderItem.objects.create(
+                    order=order,
+                    product=item.product,
+                    quantity=item.quantity,
+                    price=item.product.price,
+                )
+            else:
+
+                OrderItem.objects.create(
+                    order=order,
+                    product=item["product"],
+                    quantity=item["quantity"],
+                    price=item["product"].price,
+                )
+            
+            if not product_id:
+                checkout_items.delete()
+        
+            return redirect('orders_success')
+
+    return render(request, "orders/checkout.html", {'cart_items': checkout_items,'total': total})
 
 @login_required
 def orders_success(request):
@@ -66,3 +93,9 @@ def orders(request):
         user=request.user
     ).order_by('-created_at')
     return render(request,'orders/orders.html',{'orders':orders})
+
+@login_required
+def delete_order(request,order_id):
+    product=get_object_or_404(Order,id=order_id,user=request.user)
+    product.delete()
+    return redirect('orders')

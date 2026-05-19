@@ -16,8 +16,8 @@
 
                 <div>
                     <p class="label">Order ID</p>
-                    <h3>#{{ order.id }}</h3>
-                    <h2>{{ order.user.username }}</h2>
+                    <h5>#{{ order.id }}</h5>
+                    
                 </div>
 
                 <div>
@@ -32,10 +32,16 @@
                         {{ order.status }}
                     </span>
                 </div>
+                <div class="delete-section">
+
+                   <p>Delete Order</p>
+
+                   <a href="{% url 'delete' order.id %}" class="delete-btn">Delete</a>
+                </div>
 
                 <div>
                     <p class="label">Total</p>
-                    <h3>₹ {{ order.total_amount }}</h3>
+                    <h3>$ {{ order.total_amount }}</h3>
                 </div>
 
             </div>
@@ -54,7 +60,7 @@
 
                         <p>Quantity: {{ item.quantity }}</p>
 
-                        <p>₹ {{ item.price }}</p>
+                        <p>$ {{ item.price }}</p>
 
                     </div>
 

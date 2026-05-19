@@ -138,3 +138,36 @@
 
     border-radius: 12px;
 }
+.delete-section{
+    margin-top: 15px;
+}
+
+.delete-section p{
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.delete-btn{
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #ff4d4d;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.delete-btn:hover{
+    background: #e60000;
+
+    transform: translateY(-2px);
+}
