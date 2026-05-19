@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'orders/css/orders.css' %}">
+<div class="orders-container">
+
+    <h1>My Orders</h1>
+
+    {% if orders %}
+
+        {% for order in orders %}
+
+        <div class="order-card">
+
+            <div class="order-top">
+
+                <div>
+                    <p class="label">Order ID</p>
+                    <h3>#{{ order.id }}</h3>
+                    <h2>{{ order.user.username }}</h2>
+                </div>
+
+                <div>
+                    <p class="label">Date</p>
+                    <h3>{{ order.created_at|date:"d M Y" }}</h3>
+                </div>
+
+                <div>
+                    <p class="label">Status</p>
+
+                    <span class="status {{ order.status|lower }}">
+                        {{ order.status }}
+                    </span>
+                </div>
+
+                <div>
+                    <p class="label">Total</p>
+                    <h3>₹ {{ order.total_amount }}</h3>
+                </div>
+
+            </div>
+
+            <div class="order-items">
+
+                {% for item in order.items.all %}
+
+                <div class="item">
+
+                    <img src="{{ item.product.image }}" alt="">
+
+                    <div class="item-details">
+
+                        <h4>{{ item.product.name }}</h4>
+
+                        <p>Quantity: {{ item.quantity }}</p>
+
+                        <p>₹ {{ item.price }}</p>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty-orders">
+
+            <h2>No Orders Yet</h2>
+
+            <p>Start shopping and your orders will appear here.</p>
+
+            <a href="{% url 'product_list' %}">
+                Shop Now
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
