@@ -1,2 +1,53 @@
-<h1>Why Soulmates?</h1>
-<p>This page explains why your brand is unique.</p>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'home/css/about.css' %}">
+
+<!-- HERO SECTION -->
+<section class="info-hero">
+
+    <div class="info-hero-overlay">
+        <h1>Why Choose SoulMates</h1>
+    </div>
+
+</section>
+
+
+<!-- CONTENT SECTION -->
+<section class="info-content">
+
+    <div class="info-container">
+
+        <h2>Your Smart Shopping Destination</h2>
+
+        <p class="lead">
+            Shop smarter, faster, and more securely with BuyNgo.
+        </p>
+
+        <p>
+            Soulmates is a modern eCommerce platform designed to provide users with
+            a seamless online shopping experience. From discovering products to
+            secure checkout and order tracking, our platform brings everything
+            together in one place.
+        </p>
+
+        <p>
+            Our system allows customers to browse products, manage carts,
+            save delivery addresses, place orders, and track purchases effortlessly.
+            With secure payment integration, responsive design, and user-friendly
+            navigation, SoulMates delivers convenience at every step.
+        </p>
+
+        <p>
+            Whether you are shopping for electronics, fashion, accessories,
+            or daily essentials, SoulMates ensures reliability, speed,
+            and a smooth digital shopping journey.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
