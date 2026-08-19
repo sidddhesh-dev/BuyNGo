@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render,redirect
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
+from orders.views import checkout
 
 User = get_user_model()
 
