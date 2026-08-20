@@ -5,6 +5,9 @@ from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from orders.views import checkout
 
+"""This views are the brain of project which decides what how any operation is going to happen logics and 
+backend is connect to front end by views"""
+
 User = get_user_model()
 
 def user_register(request):
