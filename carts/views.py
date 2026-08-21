@@ -4,6 +4,8 @@ from products.models import Products
 from django.contrib.auth.decorators import login_required
 
 
+"""THis are the views releted to cart items , Basic CRUD operations are preformed on Cart"""
+
 @login_required
 def add_to_cart(request, product_id):
 
