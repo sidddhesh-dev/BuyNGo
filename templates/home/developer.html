@@ -1,149 +1,441 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'home/css/developer.css' %}">
 
+<main class="developer-page">
 
-<section class="about-section">
-    <div class="container about-container">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-grid">
 
-        <div class="about-text">
-            <h1>Siddhesh Thorat</h1>
-            <h2>Emerging Full Stack Python Developer</h2>
+            <div class="hero-copy">
+                <p class="eyebrow">PYTHON / DJANGO / FULL STACK</p>
 
-            <p>
-                Full Stack Python Developer with hands-on experience building scalable web applications using Python,
-                Django, and REST APIs. Skilled in backend development, database design, authentication systems,
-                and performance optimization.
-            </p>
+                <h1>
+                    Siddhesh
+                    <span>Thorat.</span>
+                </h1>
 
-            <a href="/static/images/siddhesh_resume.pdf" class="resume-btn" target="_blank">
-                Download Resume
-            </a>
+                <p class="hero-role">
+                    Emerging Full Stack Python Developer
+                </p>
+
+                <p class="hero-description">
+                    I build structured, reliable web applications with Python,
+                    Django, REST APIs, databases, authentication systems and
+                    production-focused backend architecture.
+                </p>
+
+                <div class="hero-actions">
+                    <a
+                        href="{% static 'images/siddhesh_resume.pdf' %}"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        View Resume
+                    </a>
+
+                    <a href="#contact_details" class="btn btn-secondary">
+                        Contact Me
+                    </a>
+                </div>
+
+                <div class="hero-meta">
+                    <div>
+                        <span class="meta-label">BASE</span>
+                        <strong>Pune, India</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">FOCUS</span>
+                        <strong>Backend Engineering</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">STATUS</span>
+                        <strong class="status">
+                            <i></i> Open to opportunities
+                        </strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-profile">
+                <div class="profile-frame">
+                    <div class="profile-grid"></div>
+
+                    <img
+                        src="{% static 'images/profile.png' %}"
+                        alt="Siddhesh Thorat"
+                    >
+
+                    <div class="profile-tag">
+                        <span>DEV_01</span>
+                        <small>PYTHON ENGINEER</small>
+                    </div>
+                </div>
+            </div>
 
         </div>
+    </section>
 
 
-        <div class="about-image">
-            <img src="/static/images/profile.png" alt="Siddhesh Thorat">
+    <!-- PROJECTS -->
+    <section class="section projects-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SELECTED WORK</p>
+                    <h2>Projects</h2>
+                </div>
+
+                <p class="section-intro">
+                    Systems built to solve practical problems, not just
+                    demonstrate syntax.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                  
+                <article class="project-card project-featured">
+                    <div class="project-number">01</div>
+
+                    <div class="project-content">
+                        <p class="project-type">AI PLATFORM / FULL STACK / DJANGO</p>
+                    
+                        <h3>NeuroFlow AI</h3>
+                    
+                        <p>
+                            An AI-powered document intelligence platform built with Django
+                            that combines document processing, semantic search, vector
+                            retrieval, Redis caching, and multiple LLM providers to turn
+                            uploaded documents into an interactive knowledge system.
+                        </p>
+                    
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>PostgreSQL</span>
+                            <span>ChromaDB</span>
+                            <span>Redis</span>
+                            <span>Gemini</span>
+                            <span>OpenAI</span>
+                            <span>Groq</span>
+                        </div>
+                    
+                        <div class="project-links">
+                            <a
+                                href="https://neuroflow-ai-frontend.onrender.com"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Live Demo ↗
+                            </a>
+                        
+                            <a
+                                href="https://github.com/sidddhesh-dev/NeuroFlow-AI"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                GitHub ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card project-featured">
+                    <div class="project-number">02</div>
+
+                    <div class="project-content">
+                        <p class="project-type">FULL STACK / DJANGO</p>
+
+                        <h3>Job Application Tracker</h3>
+
+                        <p>
+                            A centralized job-search management platform for
+                            tracking applications, companies, interview
+                            schedules, statuses and deadlines.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Django</span>
+                            <span>Python</span>
+                            <span>REST API</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a
+                                href="https://job-tracking-application.onrender.com"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Live Demo ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/sidddhesh-dev/job_tracking_application"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                GitHub ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="project-card project-featured">
+                    <div class="project-number">03</div>
+
+                    <div class="project-content">
+                        <p class="project-type">E-COMMERCE</p>
+
+                        <h3>Buy-N-Go</h3>
+
+                        <p>
+                            A Django e-commerce platform with dynamic product
+                            rendering, authentication, database management
+                            and external REST API integration.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Django</span>
+                            <span>PostgreSQL</span>
+                            <span>REST API</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a
+                                href="https://github.com/sidddhesh-dev/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                GitHub ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </div>
+    </section>
 
-    </div>
-</section>
 
-<section class="section light">
+    <!-- EXPERIENCE -->
+    <section class="section experience-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PROFESSIONAL EXPERIENCE</p>
+                    <h2>Experience</h2>
+                </div>
+            </div>
+
+            <article class="experience-card">
+
+                <div class="experience-top">
+                    <div>
+                        <p class="project-type">PYTHON DEVELOPER INTERN</p>
+                        <h3>Testyantra Software Solutions Pvt. Ltd.</h3>
+                    </div>
+
+                    <span class="experience-date">
+                        JAN 2025 — OCT 2025
+                    </span>
+                </div>
+
+                <div class="experience-body">
+                    <div class="experience-line"></div>
+
+                    <ul>
+                        <li>
+                            Developed backend modules using Python and Django,
+                            improving application structure and maintainability.
+                        </li>
+
+                        <li>
+                            Designed and implemented RESTful APIs for secure
+                            communication between frontend and backend systems.
+                        </li>
+
+                        <li>
+                            Optimized SQL queries and database operations to
+                            improve performance and reduce response time.
+                        </li>
+
+                        <li>
+                            Implemented authentication workflows and strengthened
+                            application data protection.
+                        </li>
+
+                        <li>
+                            Debugged and resolved application issues to improve
+                            system reliability and user experience.
+                        </li>
+                    </ul>
+                </div>
+
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="section skills-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">TECHNICAL TOOLKIT</p>
+                    <h2>Skills</h2>
+                </div>
+            </div>
+
+            <div class="skills-layout">
+
+                <div class="skills-primary">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>Django REST Framework</span>
+                    <span>FastAPI</span>
+                    <span>PostgreSQL</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>REST APIs</span>
+                </div>
+
+                <div class="skills-secondary">
+                    <span>Git & GitHub</span>
+                    <span>Postman</span>
+                    <span>HTML5 & CSS3</span>
+                    <span>Data Structures & Algorithms</span>
+                    <span>OOP</span>
+                    <span>SDLC</span>
+                    <span>VS Code</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section class="section education-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">ACADEMIC BACKGROUND</p>
+                    <h2>Education</h2>
+                </div>
+            </div>
+
+            <div class="education-grid">
+
+                <article class="education-card">
+                    <span class="education-year">2022 — 2025</span>
+
+                    <h3>
+                        Bachelor of Engineering
+                    </h3>
+
+                    <p class="education-field">
+                        Computer Engineering
+                    </p>
+
+                    <p>
+                        Bharat College of Engineering, Mumbai
+                    </p>
+                </article>
+
+
+                <article class="education-card">
+                    <span class="education-year">2019 — 2022</span>
+
+                    <h3>
+                        Diploma in Information Technology
+                    </h3>
+
+                    <p>
+                        Govt. Polytechnic Awasari BK, Pune
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact_details" class="section contact-section">
+        <div class="container contact-grid">
+
+            <div>
+                <p class="eyebrow">LET'S CONNECT</p>
+
+                <h2>
+                    Building something
+                    <span>useful?</span>
+                </h2>
+
+                <p class="contact-description">
+                    I'm interested in backend engineering, full-stack
+                    development and opportunities where strong engineering
+                    fundamentals matter.
+                </p>
+            </div>
+
+
+            <div class="contact-details">
+
+                <a href="mailto:siddhesh.s.thorat14@gmail.com">
+                    <span>Email</span>
+                    siddhesh.s.thorat14@gmail.com
+                </a>
+
+                <a href="tel:+918830875465">
+                    <span>Phone</span>
+                    +91 8830875465
+                </a>
+
+                <div>
+                    <span>Location</span>
+                    Pune, Maharashtra, India
+                </div>
+
+                <a
+                    href="https://github.com/sidddhesh-dev/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <span>GitHub</span>
+                    github.com/sidddhesh-dev
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
     <div class="container">
-        <h2>Projects</h2>
-
-        <div class="project-card">
-            <h3>Job Application Tracker</h3>
-            <p>Job Application Tracker is a full-stack Django web application designed to help job seekers efficiently manage and monitor their job search process in one centralized platform.
-
-            The system allows users to store and track job applications, interview schedules, company details, application status, and important deadlines. It improves organization and reduces missed opportunities by providing structured tracking and real-time status updates.</p>
-            <p><strong>Tech:</strong> Django, Python, HTML, CSS, Bootstrap, JavaScript</p>
-            <a href="https://job-tracking-application.onrender.com">Live Project Demo | </a>
-            <a href="https://github.com/sidddhesh-dev/job_tracking_application">GitHub Repository</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Buy-N-Go (E-Commerce)</h3>
-            <p>Buy-N-Go is a full-stack e-commerce web application built using Django that enables users to browse products, view dynamic listings, and securely manage their shopping experience. The platform integrates external REST APIs to fetch and render real-time product data, ensuring dynamic content and scalability.
-
-            The application demonstrates modern e-commerce architecture by combining secure authentication, database management, and API-driven product rendering..</p>
-            <p><strong>Tech:</strong> Django, PostgreSQL, REST API</p>
-            <a href="https://github.com/sidddhesh-dev/">GitHub Repository</a>
-        </div>
-
-        <div class="project-card">
-            <h3>NewDays Learning App</h3>
-            <p>NewDays is an interactive children’s learning web application designed to support early cognitive development through engaging visuals, interactive elements, and user-friendly educational content.
-
-            The platform provides a playful digital learning environment where children can improve recognition skills, memory, and basic learning abilities through interactive UI components and structured activities.</p>
-            <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-            <a href="#">GitHub Repository</a>
-        </div>
-
+        <span>SIDDHESH THORAT</span>
+        <span>Built with Django · 2026</span>
     </div>
-</section>
-
-
-<section class="section">
-    <div class="container">
-        <h2>Experience</h2>
-        <div class="timeline">
-            <h3>Python Developer Intern</h3>
-            <span>Testyantra Software Solutions Pvt. Ltd. | Jan 2025 – Oct 2025</span>
-            <ul>
-                <li>Developed scalable backend modules using Python & Django, improving application structure and maintainability.</li>
-                <li>Designed and implemented RESTful APIs enabling secure and seamless communication between frontend and backend systems.</li>
-                <li>Optimized SQL queries and database operations, improving performance and reducing response time.</li>
-                <li>Implemented secure authentication workflows and strengthened application data protection.</li>
-                <li>Debugged and resolved application issues, enhancing system reliability and user experience.</li>
-
-            </ul>
-        </div>
-    </div>
-</section>
-
-
-<section class="section light">
-    <div class="container">
-        <h2>Skills</h2>
-        <div class="skills">
-            <span>Python</span>
-            <span>Django</span>
-            <span>MySQL</span>
-            <span>Django REST Framework</span>
-            <span>FastAPI</span>
-            <span>PostgreSQL</span>
-            <span>JavaScript</span>
-            <span>HTML5 & CSS3</span>
-            <span>REST APIs</span>
-            <span>Git & GitHub</span>
-            <span>Postman</span>
-            <span>Vs Code</span>
-            <span>Data structure and algorithms</span>
-            <span>OOP & SDLC</span>
-
-
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <h2>Education</h2>
-
-        <div class="edu">
-            <h3>Bachelor of Engineering (Computer Engineering)</h3>
-            <p>Bharat College of Engineering, Mumbai</p>
-            <span>2022 – 2025</span>
-        </div>
-
-        <div class="edu">
-            <h3>Diploma in Information Technology</h3>
-            <p>Govt. Polytechnic Awasari BK, Pune</p>
-            <span>2019 – 2022</span>
-        </div>
-
-    </div>
-</section>
-
-<section id="contact_details" class="section light">
-    <div class="container">
-        <h2>Contact Me</h2>
-        <p><strong>Email:</strong> siddhesh.s.thorat14@gmail.com</p>
-        <p><strong>Phone:</strong> +91 8830875465</p>
-        <p><strong>Location:</strong> Pune, Maharashtra, India</p>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Siddhesh Thorat | Built with Django</p>
 </footer>
-
 
 {% endblock %}

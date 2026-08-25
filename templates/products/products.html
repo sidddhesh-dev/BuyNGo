@@ -5,207 +5,256 @@
 
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 
+<main class="products-page">
 
-<!-- =========================
-     PRODUCT SECTION
-========================= -->
+    <!-- HEADER -->
+    <section class="products-header">
 
-<div class="product-container">
+        <div class="products-header-inner">
 
-    {% for product in page_obj %}
+            <div>
+                <p class="eyebrow">SOULMATES / COLLECTION</p>
 
-    <div class="product-card">
+                <h1>Find your pair.</h1>
 
-        <!-- IMAGE SECTION -->
-
-        <div class="image-wrapper">
-
-            <img src="{{ product.image }}" alt="{{ product.name }}">
-
-            <!-- HOVER DETAILS -->
-
-            <div class="hover-content">
-                <p>
-                    <strong>Gender:</strong>
-                    {{ product.gender }}
+                <p class="products-intro">
+                    Performance, comfort and everyday footwear
+                    selected for the way you move.
                 </p>
+            </div>
 
-                <p>
-                    <strong>Material:</strong>
-                    {{ product.material }}
-                </p>
+            <div class="catalog-meta">
+                <span>CATALOG</span>
+                <strong>{{ page_obj.paginator.count }} styles</strong>
+            </div>
 
-                <p>
-                    <strong>Closure:</strong>
-                    {{ product.closure_type }}
-                </p>
+        </div>
 
-                <p>
-                    <strong>Waterproof:</strong>
+    </section>
+
+
+    <!-- PRODUCT GRID -->
+    <section class="catalog-section">
+
+        <div class="catalog-container">
+
+            {% for product in page_obj %}
+
+            <article class="product-card">
+
+                <!-- IMAGE -->
+                <div class="product-image">
+
+                    <img
+                        src="{{ product.image }}"
+                        alt="{{ product.name }}"
+                        loading="lazy"
+                    >
+
+                    <div class="product-index">
+                        {{ forloop.counter|stringformat:"02d" }}
+                    </div>
 
                     {% if product.waterproof %}
-                        Yes
-                    {% else %}
-                        No
+                        <span class="product-badge">
+                            WATERPROOF
+                        </span>
                     {% endif %}
-                </p>
 
-                <!-- BEST FOR -->
+                    <!-- HOVER DETAILS -->
+                    <div class="product-hover">
 
-                <div class="hover-best-for">
+                        <div class="hover-details">
 
-                    {% for item in product.best_for %}
+                            <div>
+                                <span>Gender</span>
+                                <strong>{{ product.gender }}</strong>
+                            </div>
 
-                        <span>{{ item }}</span>
+                            <div>
+                                <span>Material</span>
+                                <strong>{{ product.material }}</strong>
+                            </div>
 
-                    {% endfor %}
+                            <div>
+                                <span>Closure</span>
+                                <strong>{{ product.closure_type }}</strong>
+                            </div>
+
+                        </div>
+
+                        {% if product.best_for %}
+                            <div class="hover-best-for">
+
+                                {% for item in product.best_for %}
+                                    <span>{{ item }}</span>
+                                {% endfor %}
+
+                            </div>
+                        {% endif %}
+
+                    </div>
 
                 </div>
 
-            </div>
 
-        </div>
+                <!-- PRODUCT INFORMATION -->
+                <div class="product-info">
 
+                    <div class="product-topline">
 
-        <div class="product-info">
+                        <span class="product-category">
+                            {{ product.category }}
+                        </span>
 
+                        <span class="product-rating">
+                            ★ {{ product.rating }}
+                        </span>
 
-            <p class="category">
-                {{ product.category }}
-            </p>
-
-
-            <h3>
-                {{ product.name }}
-            </h3>
-
-            <div class="price-rating">
-
-                <p class="price">
-                    $ {{ product.price }}
-                </p>
-
-                <p class="rating">
-                    ⭐ {{ product.rating }}
-                </p>
-
-            </div>
-
-
-
-            <!-- EXTRA DETAILS -->
-
-            <div class="mini-details">
-
-                <span>{{ product.gender }}</span>
-
-                {% if product.waterproof %}
-                    <span>Waterproof</span>
-                {% endif %}
-
-                {% if product.material %}
-                    <span>
-                        {{ product.material|truncatechars:15 }}
-                    </span>
-                {% endif %}
-
-            </div>
-
-
-
-            <!-- COLOR VARIANTS -->
-
-            {% if product.colors.all %}
-
-            <div class="color-preview">
-
-                {% for color in product.colors.all|slice:":4" %}
-
-                    <div class="color-circle"
-                         style="--clr: {{ color.hex }};">
                     </div>
 
-                {% endfor %}
 
+                    <h2>{{ product.name }}</h2>
+
+
+                    <div class="product-price-row">
+
+                        <strong class="product-price">
+                            $ {{ product.price }}
+                        </strong>
+
+                        {% if product.colors.all %}
+                            <span class="color-count">
+                                {{ product.colors.all|length }} colors
+                            </span>
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- COLOR PREVIEW -->
+                    {% if product.colors.all %}
+
+                    <div class="color-preview">
+
+                        {% for color in product.colors.all|slice:":5" %}
+
+                            <span
+                                class="color-dot"
+                                style="--clr: {{ color.hex }};"
+                                title="{{ color.name }}"
+                            ></span>
+
+                        {% endfor %}
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- BEST FOR -->
+                    {% if product.best_for %}
+
+                    <div class="best-for-row">
+
+                        {% for item in product.best_for|slice:":2" %}
+                            <span>{{ item }}</span>
+                        {% endfor %}
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <a
+                        href="{% url 'product_details' product.id %}"
+                        class="product-link"
+                    >
+                        View product
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="catalog-empty">
+                <p class="eyebrow">NO RESULTS</p>
+                <h2>No footwear found.</h2>
+                <p>
+                    Try another category or return to the full collection.
+                </p>
+
+                <a
+                    href="{% url 'product_list' %}"
+                    class="empty-link"
+                >
+                    View all products →
+                </a>
             </div>
 
-            {% endif %}
-
-
-
-            <!-- BEST FOR TAGS -->
-
-            <div class="card-best-for">
-
-                {% for item in product.best_for|slice:":2" %}
-
-                    <small>{{ item }}</small>
-
-                {% endfor %}
-
-            </div>
-
-
-
-            <!-- BUTTON -->
-
-            <a href="{% url 'product_details' product.id %}"
-               class="view-btn">
-
-                View Product
-
-            </a>
+            {% endfor %}
 
         </div>
 
-    </div>
-
-    {% endfor %}
-
-</div>
+    </section>
 
 
+    <!-- PAGINATION -->
+    {% if page_obj.paginator.num_pages > 1 %}
 
-<!-- =========================
-     PAGINATION
-========================= -->
+    <nav class="pagination" aria-label="Product pagination">
 
-<div class="pagination">
+        {% if page_obj.has_previous %}
 
-    {% if page_obj.has_previous %}
+            <a
+                href="?page={{ page_obj.previous_page_number }}"
+                class="pagination-arrow"
+                aria-label="Previous page"
+            >
+                ←
+            </a>
 
-        <a href="?page=1">
-            First
-        </a>
+        {% else %}
 
-        <a href="?page={{ page_obj.previous_page_number }}">
-            Previous
-        </a>
+            <span class="pagination-arrow disabled">
+                ←
+            </span>
+
+        {% endif %}
+
+
+        <span class="pagination-current">
+            {{ page_obj.number }}
+            <span>/</span>
+            {{ page_obj.paginator.num_pages }}
+        </span>
+
+
+        {% if page_obj.has_next %}
+
+            <a
+                href="?page={{ page_obj.next_page_number }}"
+                class="pagination-arrow"
+                aria-label="Next page"
+            >
+                →
+            </a>
+
+        {% else %}
+
+            <span class="pagination-arrow disabled">
+                →
+            </span>
+
+        {% endif %}
+
+    </nav>
 
     {% endif %}
 
-
-    <span class="current-page">
-
-        Page {{ page_obj.number }}
-        of
-        {{ page_obj.paginator.num_pages }}
-
-    </span>
-
-
-    {% if page_obj.has_next %}
-
-        <a href="?page={{ page_obj.next_page_number }}">
-            Next
-        </a>
-
-        <a href="?page={{ page_obj.paginator.num_pages }}">
-            Last
-        </a>
-
-    {% endif %}
-
-</div>
+</main>
 
 {% endblock %}

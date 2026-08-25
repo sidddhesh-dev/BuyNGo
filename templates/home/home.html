@@ -5,248 +5,493 @@
 
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
 
-<main class="main">
+<main class="soulmates-home">
 
-<section class="hero">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-noise"></div>
 
-    
+        <div class="hero-container">
 
-    <div class="hero-container">
+            <div class="hero-copy">
+                <p class="eyebrow">SOULMATES / FOOTWEAR SYSTEM</p>
 
-        <div class="hero-text">
-            <h1>Step Into Style & Comfort</h1>
+                <h1>
+                    Move
+                    <span>different.</span>
+                </h1>
 
-            <p>
-                Discover premium footwear crafted for comfort, durability, 
-                and everyday elegance.
-            </p>
+                <p class="hero-description">
+                    Footwear for the pace you actually live at —
+                    from everyday streets to long runs and everything
+                    in between.
+                </p>
 
-            <div class="hero-buttons">
+                <div class="hero-buttons">
+                    <a href="{% url 'product_list' %}" class="btn primary-btn">
+                        Shop Collection
+                    </a>
 
-                <a href="{% url 'product_list' %}">
-                    <button class="btn primary-btn">
-                        Shop Now
-                    </button>
-                </a>
+                    <a href="{% url 'developer' %}" class="btn secondary-btn">
+                        Meet the Developer
+                    </a>
+                </div>
 
-                <a href="{% url 'developer' %}">
-                    <button class="btn secondary-btn">
-                        Developer
-                    </button>
-                </a>
+                <div class="hero-meta">
+                    <div>
+                        <span>01</span>
+                        <strong>Everyday comfort</strong>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <strong>Performance focused</strong>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <strong>Built for movement</strong>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="hero-frame">
+                    <img
+                        src="{% static 'images/shoue999.png' %}"
+                        alt="Featured Soulmates footwear"
+                    >
+
+                    <div class="hero-label">
+                        <span>FEATURED DROP</span>
+                        <strong>MOVE / 26</strong>
+                    </div>
+                </div>
+
+                <div class="hero-side-note">
+                    <span>EST. 2026</span>
+                    <span>PUNE / INDIA</span>
+                </div>
 
             </div>
+
+        </div>
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="category-section">
+
+        <div class="category-header page-container">
+            <div>
+                <p class="eyebrow dark-eyebrow">EXPLORE THE RANGE</p>
+                <h2>Find your pair.</h2>
+            </div>
+
+            <p class="category-subtext">
+                From daily movement to performance days,
+                choose by the way you move.
+            </p>
         </div>
 
-        <!-- <div class="hero-image">
-            <img src="https://thumbs.dreamstime.com/b/pair-men-s-casual-white-shoes-marble-background-pair-men-s-casual-white-shoes-marble-background-404782427.jpg" alt="Shoes">
-        </div> -->
 
-    </div>
+        <div class="category-container">
 
-</section>
-<section class="category-section">
+            <a href="{% url 'product_list' %}?category=Sneakers"
+               class="category-card category-wide">
 
-    <div class="category-header">
-        <h2>SHOP BY CATEGORY</h2>
-        <p class="category-subtext">
-            Explore trending styles curated just for you
-        </p>
-    </div>
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+                    alt="Sneakers"
+                    loading="lazy"
+                >
 
-<div class="category-container">
+                <div class="category-overlay">
+                    <span class="category-index">01</span>
+                    <div>
+                        <h3>Sneakers</h3>
+                        <p>Everyday / Street / Casual</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
 
-    <!-- Sneakers -->
-    <a href="{% url 'product_list' %}?category=Sneakers" class="category-card">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="">
-        <div class="category-overlay">
-            <h3>Sneakers</h3>
-            <p>30-60% OFF</p>
-            <span>Shop Now</span>
+
+            <a href="{% url 'product_list' %}?category=Running"
+               class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1608231387042-66d1773070a5"
+                    alt="Running shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">02</span>
+                    <div>
+                        <h3>Running</h3>
+                        <p>Distance / Speed / Training</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Casual"
+               class="category-card">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGLpV6S5IEcLL3WRtqOiG7MfwM2JYTn0SkpQ&s"
+                    alt="Casual footwear"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">03</span>
+                    <div>
+                        <h3>Casual</h3>
+                        <p>Relaxed / Daily / Lifestyle</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Skate"
+               class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77"
+                    alt="Skate shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">04</span>
+                    <div>
+                        <h3>Skate</h3>
+                        <p>Grip / Impact / Street</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Basketball"
+               class="category-card">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLrR05zFFSR5WrV6GvB_GsmBff9jt6oEs4NQ&s"
+                    alt="Basketball shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">05</span>
+                    <div>
+                        <h3>Basketball</h3>
+                        <p>Court / Control / Cushion</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Boots"
+               class="category-card category-tall">
+
+                <img
+                    src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0"
+                    alt="Boots"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">06</span>
+                    <div>
+                        <h3>Boots</h3>
+                        <p>Utility / Outdoor / Durable</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Sandals"
+               class="category-card">
+
+                <img
+                    src="https://assets.myntassets.com/w_200,q_50,,dpr_3,fl_progressive,f_webp/assets/images/2025/NOVEMBER/12/8EHbXYAG_a5a201ee71814ce6a78bb25778c667d4.jpg"
+                    alt="Sandals"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">07</span>
+                    <div>
+                        <h3>Sandals</h3>
+                        <p>Light / Easy / Everyday</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Trail%20Running"
+               class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa"
+                    alt="Trail running shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">08</span>
+                    <div>
+                        <h3>Trail</h3>
+                        <p>Terrain / Grip / Endurance</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Hiking"
+               class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2"
+                    alt="Hiking footwear"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">09</span>
+                    <div>
+                        <h3>Hiking</h3>
+                        <p>Trail / Outdoor / Support</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Training"
+               class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1539185441755-769473a23570"
+                    alt="Training shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">10</span>
+                    <div>
+                        <h3>Training</h3>
+                        <p>Gym / Strength / Movement</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Walking"
+               class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560769629-975ec94e6a86"
+                    alt="Walking shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">11</span>
+                    <div>
+                        <h3>Walking</h3>
+                        <p>Comfort / Support / Daily</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Racing"
+               class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1491553895911-0055eca6402d"
+                    alt="Racing shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">12</span>
+                    <div>
+                        <h3>Racing</h3>
+                        <p>Speed / Race / Performance</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Tennis"
+               class="category-card">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmeOhgtCxToHUyoAbyg88Dm3vm26YO3l9U2w&s"
+                    alt="Tennis shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">13</span>
+                    <div>
+                        <h3>Tennis</h3>
+                        <p>Court / Stability / Grip</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
+
+            <a href="{% url 'product_list' %}?category=Football"
+               class="category-card category-wide">
+
+                <img
+                    src="https://img.freepik.com/premium-photo/pair-black-unbranded-sneakers-flying-dark-background-black-sport-running-shoes-levitate-air_179369-617.jpg"
+                    alt="Football shoes"
+                    loading="lazy"
+                >
+
+                <div class="category-overlay">
+                    <span class="category-index">14</span>
+                    <div>
+                        <h3>Football</h3>
+                        <p>Pitch / Speed / Control</p>
+                    </div>
+                    <span class="category-arrow">↗</span>
+                </div>
+            </a>
+
         </div>
-    </a>
 
-    <!-- Running -->
-    <a href="{% url 'product_list' %}?category=Running" class="category-card">
-        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5" alt="">
-        <div class="category-overlay">
-            <h3>Running</h3>
-            <p>30-70% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
+    </section>
 
-    <!-- Casual -->
-    <a href="{% url 'product_list' %}?category=Casual" class="category-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGLpV6S5IEcLL3WRtqOiG7MfwM2JYTn0SkpQ&s" alt="">
-        <div class="category-overlay">
-            <h3>Casual</h3>
-            <p>40-80% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
 
-    <!-- Skate -->
-    <a href="{% url 'product_list' %}?category=Skate" class="category-card">
-        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77" alt="">
-        <div class="category-overlay">
-            <h3>Skate</h3>
-            <p>40-75% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
+    <!-- BRAND STATEMENT -->
+    <section class="statement-section">
 
-    <!-- Basketball -->
-    <a href="{% url 'product_list' %}?category=Basketball" class="category-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLrR05zFFSR5WrV6GvB_GsmBff9jt6oEs4NQ&s" alt="">
-        <div class="category-overlay">
-            <h3>Basketball</h3>
-            <p>50-80% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
+        <div class="statement-inner page-container">
 
-    <!-- Boots -->
-    <a href="{% url 'product_list' %}?category=Boots" class="category-card">
-        <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0" alt="">
-        <div class="category-overlay">
-            <h3>Boots</h3>
-            <p>50-80% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
+            <p class="eyebrow">THE SOULMATES APPROACH</p>
 
-    <!-- Sandals -->
-    <a href="{% url 'product_list' %}?category=Sandals" class="category-card">
-        <img src="https://assets.myntassets.com/w_200,q_50,,dpr_3,fl_progressive,f_webp/assets/images/2025/NOVEMBER/12/8EHbXYAG_a5a201ee71814ce6a78bb25778c667d4.jpg" alt="">
-        <div class="category-overlay">
-            <h3>Sandals</h3>
-            <p>30-60% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
+            <h2>
+                Your shoes
+                <span>follow your life.</span>
+            </h2>
 
-    <!-- Trail Running -->
-    <a href="{% url 'product_list' %}?category=Trail%20Running" class="category-card">
-        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="">
-        <div class="category-overlay">
-            <h3>Trail Running</h3>
-            <p>40-70% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
+            <p>
+                We believe the best pair isn't the one that stays in the box.
+                It's the one that gets worn, travels with you, takes the hit,
+                and still feels right tomorrow.
+            </p>
 
-    <!-- Hiking -->
-    <a href="{% url 'product_list' %}?category=Hiking" class="category-card">
-        <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2" alt="">
-        <div class="category-overlay">
-            <h3>Hiking</h3>
-            <p>40-70% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
+            <a href="{% url 'product_list' %}" class="statement-link">
+                Explore the collection <span>→</span>
+            </a>
 
-    <!-- Training -->
-    <a href="{% url 'product_list' %}?category=Training" class="category-card">
-        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570" alt="">
-        <div class="category-overlay">
-            <h3>Training</h3>
-            <p>30-60% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
-
-    <!-- Walking -->
-    <a href="{% url 'product_list' %}?category=Walking" class="category-card">
-        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86" alt="">
-        <div class="category-overlay">
-            <h3>Walking</h3>
-            <p>30-60% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
-
-    <!-- Racing -->
-    <a href="{% url 'product_list' %}?category=Racing" class="category-card">
-        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="">
-        <div class="category-overlay">
-            <h3>Racing</h3>
-            <p>50-80% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
-
-    <!-- Tennis -->
-    <a href="{% url 'product_list' %}?category=Tennis" class="category-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmeOhgtCxToHUyoAbyg88Dm3vm26YO3l9U2w&s" alt="">
-        <div class="category-overlay">
-            <h3>Tennis</h3>
-            <p>30-60% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
-
-    <!-- Football -->
-    <a href="{% url 'product_list' %}?category=Football" class="category-card">
-        <img src="https://img.freepik.com/premium-photo/pair-black-unbranded-sneakers-flying-dark-background-black-sport-running-shoes-levitate-air_179369-617.jpg" alt="">
-        <div class="category-overlay">
-            <h3>Football</h3>
-            <p>30-60% OFF</p>
-            <span>Shop Now</span>
-        </div>
-    </a>
-
-</div>
-
-</section>
-
-<section class="promo-section">
-
-    <div class="promo-content">
-        <h2>Walk with Confidence 👟</h2>
-
-        <p>
-            At SOULMATES, we believe shoes are more than fashion — 
-            they define your journey. Discover designs crafted for 
-            performance, comfort, and timeless style.
-        </p>
-
-        <a href="{% url 'product_list' %}">
-            <button class="btn primary-btn">Explore Collection</button>
-        </a>
-    </div>
-
-</section>
-
-<section class="info-section">
-    <div class="info-container">
-
-        <!-- Card 1 -->
-        <div class="info-card">
-            <img src="{% static 'images/why-us.jpg' %}" alt="Why Soulmates">
-            <h3>Why Soulmates?</h3>
-            <p>We craft premium footwear focused on comfort, durability, and timeless style.</p>
-            <a href="{% url 'about' %}" class="info-btn">Learn More</a>
         </div>
 
-        <!-- Card 2 -->
-        <div class="info-card">
-            <img src="{% static 'images/features.jpg' %}" alt="Features">
-            <h3>Explore Our Features</h3>
-            <p>Browse a wide range of collections designed for every occasion and need.</p>
-            <a href="{% url 'features' %}" class="info-btn">View Features</a>
+    </section>
+
+
+    <!-- INFO -->
+    <section class="info-section">
+
+        <div class="info-container page-container">
+
+            <article class="info-card">
+                <div class="info-image">
+                    <img
+                        src="{% static 'images/why-us.jpg' %}"
+                        alt="Why Soulmates"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="info-content">
+                    <p class="eyebrow dark-eyebrow">01 / THE BRAND</p>
+                    <h3>Why Soulmates?</h3>
+
+                    <p>
+                        Premium footwear focused on comfort,
+                        durability, and designs that stay relevant.
+                    </p>
+
+                    <a href="{% url 'about' %}" class="info-btn">
+                        Learn More →
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="info-card">
+                <div class="info-image">
+                    <img
+                        src="{% static 'images/features.jpg' %}"
+                        alt="Soulmates features"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="info-content">
+                    <p class="eyebrow dark-eyebrow">02 / COLLECTIONS</p>
+                    <h3>Explore the Features</h3>
+
+                    <p>
+                        Discover collections designed around
+                        different environments, sports, and routines.
+                    </p>
+
+                    <a href="{% url 'features' %}" class="info-btn">
+                        View Features →
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="info-card">
+                <div class="info-image">
+                    <img
+                        src="{% static 'images/developer.jpg' %}"
+                        alt="SOULMATES developer"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="info-content">
+                    <p class="eyebrow dark-eyebrow">03 / BUILDER</p>
+                    <h3>The Developer</h3>
+
+                    <p>
+                        Meet the creator behind SOULMATES and
+                        explore the technology powering the platform.
+                    </p>
+
+                    <a href="{% url 'developer' %}" class="info-btn">
+                        Meet the Developer →
+                    </a>
+                </div>
+            </article>
+
         </div>
 
-        <!-- Card 3 -->
-        <div class="info-card">
-            <img src="{% static 'images/developer.jpg' %}" alt="Developer">
-            <h3>Developer</h3>
-            <p>Meet the creator behind SOULMATES and explore the tech powering this platform.</p>
-            <a href="{% url 'developer' %}" class="info-btn">Know More</a>
-        </div>
-
-    </div>
-</section>
+    </section>
 
 </main>
 
