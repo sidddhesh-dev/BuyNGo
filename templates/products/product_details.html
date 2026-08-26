@@ -5,191 +5,295 @@
 
 <link rel="stylesheet" href="{% static 'products/css/product_details.css' %}">
 
-<div class="product-detail-container">
+<main class="product-detail-page">
 
-    <!-- LEFT SIDE -->
-    <div class="left-section">
+    <div class="product-detail-container">
 
-        <div class="main-image">
-            <img src="{{ product.image }}" alt="{{ product.name }}">
-        </div>
+        <!-- =====================================================
+             PRODUCT MEDIA
+        ====================================================== -->
 
-        <!-- COLOR VARIANTS -->
+        <section class="product-media">
 
-        {% if product.colors.all %}
+            <div class="main-image">
 
-        <div class="color-section">
+                <span class="image-index">PRODUCT / 01</span>
 
-            <h3>Available Colors</h3>
+                <img
+                    src="{{ product.image }}"
+                    alt="{{ product.name }}"
+                >
 
-            <div class="color-list">
+                {% if product.waterproof %}
+                    <span class="media-badge">
+                        WATERPROOF
+                    </span>
+                {% endif %}
 
-    {% for color in product.colors.all %}
-
-    <div class="color-item">
-
-        <div class="color-circle" style="--clr: {{ color.hex }};"></div>
-
-        <span>{{ color.name }}</span>
-
-    </div>
-
-    {% endfor %}
-
-    </div>
-    </div>
-    {% endif %}
-    </div>
+            </div>
 
 
-    <!-- RIGHT SIDE -->
-    <div class="right-section">
+            <!-- COLORS -->
 
-        <p class="category"> Category : {{ product.category }}</p>
+            {% if product.colors.all %}
 
-        <h1>{{ product.name }}</h1>
+            <div class="color-section">
 
-        <div class="rating-stock">
+                <div class="subsection-heading">
+                    <span>01</span>
+                    <h3>Available colors</h3>
+                </div>
 
-            <p class="rating">⭐ {{ product.rating }}</p>
+                <div class="color-list">
 
-            {% if product.in_stock %}
-                <span class="stock in-stock">In Stock</span>
-            {% else %}
-                <span class="stock out-stock">Out Of Stock</span>
+                    {% for color in product.colors.all %}
+
+                    <div class="color-item">
+
+                        <span
+                            class="color-circle"
+                            style="--clr: {{ color.hex }};"
+                            title="{{ color.name }}"
+                        ></span>
+
+                        <span class="color-name">
+                            {{ color.name }}
+                        </span>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
             {% endif %}
 
-        </div>
+        </section>
 
 
-        <h2 class="price">$ {{ product.price }}</h2>
+        <!-- =====================================================
+             PRODUCT INFORMATION
+        ====================================================== -->
 
-        <p class="description">
-            {{ product.description }}
-        </p>
-         <div class="buttons">
+        <section class="product-info">
 
-            <a href="{% url 'add_to_cart' product.id %}">
-                <button class="cart-btn">
-                    Add To Cart
-                </button>
-            </a>
-
-            <a href="{% url 'checkout' product.id %}">
-                <button class="buy-btn">
-                    Buy Now
-                </button>
-            </a>
-
-        </div>
-
-
-        <!-- PRODUCT DETAILS -->
-
-        <div class="details-grid">
-
-            <div class="detail-box">
-                <strong>Gender</strong>
-                <p>{{ product.gender }}</p>
+            <div class="product-category">
+                {{ product.category }}
             </div>
 
-            <div class="detail-box">
-                <strong>Closure</strong>
-                <p>{{ product.closure_type }}</p>
-            </div>
+            <h1>{{ product.name }}</h1>
 
-            <div class="detail-box">
-                <strong>Sole Type</strong>
-                <p>{{ product.sole_type }}</p>
-            </div>
-
-            <div class="detail-box">
-                <strong>Material</strong>
-                <p>{{ product.material }}</p>
-            </div>
-
-            <div class="detail-box">
-                <strong>Texture</strong>
-                <p>{{ product.texture }}</p>
-            </div>
-
-            <div class="detail-box">
-                <strong>Finish</strong>
-                <p>{{ product.finish }}</p>
-            </div>
-
-        </div>
+            <p class="product-lede">
+                {{ product.description }}
+            </p>
 
 
+            <!-- RATING / STOCK -->
 
-        <!-- SIZES -->
+            <div class="rating-stock">
 
-        <div class="size-section">
+                <span class="rating">
+                    ★ {{ product.rating }}
+                </span>
 
-            <h3>Select Size</h3>
+                {% if product.in_stock %}
 
-            <div class="sizes">
+                    <span class="stock in-stock">
+                        <i></i>
+                        In stock
+                    </span>
 
-                {% for size in product.sizes %}
+                {% else %}
 
-                    <button class="size-btn">
-                        <p>{{ size }}</p>
-                    </button>
+                    <span class="stock out-stock">
+                        <i></i>
+                        Out of stock
+                    </span>
 
-                {% endfor %}
+                {% endif %}
 
             </div>
 
-        </div>
 
+            <!-- PRICE -->
 
+            <div class="price-row">
 
-        <!-- BEST FOR -->
+                <strong class="price">
+                    $ {{ product.price }}
+                </strong>
 
-        <div class="best-for-section">
-
-            <h3>Best For</h3>
-
-            <div class="best-tags">
-
-                {% for item in product.best_for %}
-
-                    <span>{{ item }}</span>
-
-                {% endfor %}
+                <span class="price-note">
+                    Taxes calculated at checkout
+                </span>
 
             </div>
 
-        </div>
+
+            <!-- SIZE -->
+
+            <div class="purchase-section">
+
+                <div class="purchase-heading">
+                    <h3>Select size</h3>
+
+                    <span>
+                        {{ product.sizes|length }} sizes
+                    </span>
+                </div>
+
+                <div class="sizes">
+
+                    {% for size in product.sizes %}
+
+                        <button
+                            type="button"
+                            class="size-btn"
+                            aria-label="Select size {{ size }}"
+                        >
+                            {{ size }}
+                        </button>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
 
 
+            <!-- ACTIONS -->
 
-        <!-- FEATURES -->
+            <div class="purchase-actions">
 
-        <div class="feature-section">
+                {% if product.in_stock %}
 
-            <h3>Key Features</h3>
+                    <a
+                        href="{% url 'add_to_cart' product.id %}"
+                        class="cart-btn"
+                    >
+                        Add to cart
+                    </a>
 
-            <ul>
+                    <a
+                        href="{% url 'checkout' product.id %}"
+                        class="buy-btn"
+                    >
+                        Buy now
+                        <span>↗</span>
+                    </a>
 
-                {% for feature in product.features %}
+                {% else %}
 
-                    <li>{{ feature }}</li>
+                    <span class="unavailable-btn">
+                        Currently unavailable
+                    </span>
 
-                {% endfor %}
+                {% endif %}
 
-            </ul>
-
-        </div>
+            </div>
 
 
+            <!-- TECHNICAL DETAILS -->
 
-        <!-- BUTTONS -->
+            <div class="details-section">
 
-       
+                <div class="subsection-heading">
+                    <span>02</span>
+                    <h3>Product details</h3>
+                </div>
+
+                <div class="details-grid">
+
+                    <div class="detail-box">
+                        <span>Gender</span>
+                        <strong>{{ product.gender }}</strong>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Closure</span>
+                        <strong>{{ product.closure_type }}</strong>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Sole type</span>
+                        <strong>{{ product.sole_type }}</strong>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Material</span>
+                        <strong>{{ product.material }}</strong>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Texture</span>
+                        <strong>{{ product.texture }}</strong>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Finish</span>
+                        <strong>{{ product.finish }}</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            {% if product.best_for %}
+
+            <div class="best-for-section">
+
+                <div class="subsection-heading">
+                    <span>03</span>
+                    <h3>Best for</h3>
+                </div>
+
+                <div class="best-tags">
+
+                    {% for item in product.best_for %}
+
+                        <span>{{ item }}</span>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+            {% if product.features %}
+
+            <div class="feature-section">
+
+                <div class="subsection-heading">
+                    <span>04</span>
+                    <h3>Key features</h3>
+                </div>
+
+                <ul>
+
+                    {% for feature in product.features %}
+
+                        <li>
+                            <span class="feature-mark">+</span>
+                            {{ feature }}
+                        </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+            {% endif %}
+
+        </section>
 
     </div>
 
-</div>
+</main>
 
 {% endblock %}

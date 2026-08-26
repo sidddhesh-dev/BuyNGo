@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -7,11 +8,12 @@
 
 <div class="checkout-container">
 
-    <!-- LEFT SIDE -->
-
     <div class="checkout-left">
 
-        <h2>Checkout</h2>
+        <div class="checkout-heading">
+            <p class="checkout-eyebrow">ORDER</p>
+            <h2>Checkout</h2>
+        </div>
 
         <form method="POST">
 
@@ -19,57 +21,187 @@
 
             <div class="section">
 
-                <h3>Shipping Address</h3>
+                <div class="section-heading">
+                    <span>01</span>
+                    <div>
+                        <h3>Shipping Address</h3>
+                        <p>Where should we deliver your order?</p>
+                    </div>
+                </div>
 
                 <div class="form-grid">
 
-                    <input type="text" name="full_name" placeholder="Full Name" required>
+                    <div class="field">
+                        <label for="full_name">Full Name</label>
+                        <input
+                            type="text"
+                            id="full_name"
+                            name="full_name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
 
-                    <input type="text" name="phone" placeholder="Phone Number" required>
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
 
-                    <input type="text" name="address_line1" placeholder="Address Line 1" required>
+                    <div class="field field-full">
+                        <label for="address_line1">Address Line 1</label>
+                        <input
+                            type="text"
+                            id="address_line1"
+                            name="address_line1"
+                            placeholder="House number, street name"
+                            autocomplete="address-line1"
+                            required
+                        >
+                    </div>
 
-                    <input type="text" name="address_line2" placeholder="Address Line 2">
+                    <div class="field field-full">
+                        <label for="address_line2">
+                            Address Line 2
+                            <span>Optional</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="address_line2"
+                            name="address_line2"
+                            placeholder="Apartment, floor, landmark"
+                            autocomplete="address-line2"
+                        >
+                    </div>
 
-                    <input type="text" name="city" placeholder="City" required>
+                    <div class="field">
+                        <label for="city">City</label>
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="City"
+                            autocomplete="address-level2"
+                            required
+                        >
+                    </div>
 
-                    <input type="text" name="state" placeholder="State" required>
+                    <div class="field">
+                        <label for="state">State</label>
+                        <input
+                            type="text"
+                            id="state"
+                            name="state"
+                            placeholder="State"
+                            autocomplete="address-level1"
+                            required
+                        >
+                    </div>
 
-                    <input type="text" name="postal_code" placeholder="Postal Code" required>
+                    <div class="field">
+                        <label for="postal_code">Postal Code</label>
+                        <input
+                            type="text"
+                            id="postal_code"
+                            name="postal_code"
+                            placeholder="Postal code"
+                            autocomplete="postal-code"
+                            required
+                        >
+                    </div>
 
-                    <input type="text" name="country" placeholder="Country" required>
+                    <div class="field">
+                        <label for="country">Country</label>
+                        <input
+                            type="text"
+                            id="country"
+                            name="country"
+                            placeholder="Country"
+                            autocomplete="country-name"
+                            required
+                        >
+                    </div>
 
                 </div>
 
             </div>
+
 
             <div class="section">
 
-                <h3>Payment Method</h3>
+                <div class="section-heading">
+                    <span>02</span>
+                    <div>
+                        <h3>Payment Method</h3>
+                        <p>Select how you want to pay.</p>
+                    </div>
+                </div>
 
                 <div class="payment-options">
 
-                    <label>
-                        <input type="radio" name="payment_method" value="COD" checked>
-                        Cash On Delivery
+                    <label class="payment-option">
+                        <input
+                            type="radio"
+                            name="payment_method"
+                            value="COD"
+                            checked
+                        >
+
+                        <span class="payment-content">
+                            <strong>Cash on Delivery</strong>
+                            <small>Pay when your order arrives</small>
+                        </span>
+
+                        <span class="radio-mark"></span>
                     </label>
 
-                    <label>
-                        <input type="radio" name="payment_method" value="UPI">
-                        UPI
+
+                    <label class="payment-option">
+                        <input
+                            type="radio"
+                            name="payment_method"
+                            value="UPI"
+                        >
+
+                        <span class="payment-content">
+                            <strong>UPI</strong>
+                            <small>Pay using your UPI app</small>
+                        </span>
+
+                        <span class="radio-mark"></span>
                     </label>
 
-                    <label>
-                        <input type="radio" name="payment_method" value="Card">
-                        Credit/Debit Card
+
+                    <label class="payment-option">
+                        <input
+                            type="radio"
+                            name="payment_method"
+                            value="Card"
+                        >
+
+                        <span class="payment-content">
+                            <strong>Credit / Debit Card</strong>
+                            <small>Pay securely with your card</small>
+                        </span>
+
+                        <span class="radio-mark"></span>
                     </label>
 
                 </div>
 
             </div>
 
+
             <button type="submit" class="place-order-btn">
-                Place Order
+                <span>Place Order</span>
+                <span class="order-arrow">→</span>
             </button>
 
         </form>
@@ -77,37 +209,85 @@
     </div>
 
 
-    <div class="checkout-right">
+    <aside class="checkout-right">
 
-        <h3>Your Cart</h3>
-
-        {% for item in cart_items %}
-
-        <div class="cart-item">
-
-            <img src="{{ item.product.image }}" alt="{{ item.product.name }}">
-
+        <div class="summary-heading">
             <div>
+                <p class="checkout-eyebrow">SUMMARY</p>
+                <h3>Your Cart</h3>
+            </div>
 
-                <h4>{{ item.product.name }}</h4>
+            <span class="cart-count">
+                {{ cart_items|length }}
+            </span>
+        </div>
 
-                <p>Qty: {{ item.quantity }}</p>
 
-                <p>$ {{ item.product.price }}</p>
+        <div class="cart-items">
+
+            {% for item in cart_items %}
+
+            <div class="cart-item">
+
+                <div class="cart-image">
+
+                    {% if item.product.image %}
+                        <img
+                            src="{{ item.product.image.url }}"
+                            alt="{{ item.product.name }}"
+                        >
+                    {% else %}
+                        <div class="image-placeholder">
+                            No image
+                        </div>
+                    {% endif %}
+
+                </div>
+
+
+                <div class="cart-item-info">
+
+                    <h4>{{ item.product.name }}</h4>
+
+                    <div class="cart-meta">
+                        <span>Qty {{ item.quantity }}</span>
+                        <span>₹ {{ item.product.price }}</span>
+                    </div>
+
+                </div>
 
             </div>
 
+            {% empty %}
+
+            <div class="empty-cart">
+                <p>Your cart is empty.</p>
+            </div>
+
+            {% endfor %}
+
         </div>
 
-        {% endfor %}
+
+        <div class="summary-divider"></div>
+
 
         <div class="total-box">
 
-            <h2>Total: $ {{ total }}</h2>
+            <span>Total</span>
+
+            <strong>
+                ₹ {{ total }}
+            </strong>
 
         </div>
 
-    </div>
+
+        <p class="secure-note">
+            Your order details are securely submitted.
+        </p>
+
+    </aside>
 
 </div>
 
