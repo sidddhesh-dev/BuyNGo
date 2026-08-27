@@ -4,69 +4,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account</title>
+
+    <title>My Account | SoulMates</title>
 
     <link rel="stylesheet" href="{% static 'accounts/css/account.css' %}">
 </head>
+
 <body>
 
-    <div class="account-page">
-        <div class="sidebar">
+<div class="account-page">
 
-            <h2>SoulMates</h2>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-            <ul>
-                <li><a href="{% url 'home' %}">Start Shopping</a></li>
-                <li><a href="{% url 'orders' %}">My Orders</a></li>
-                <li><a href="{% url 'cart_page' %}">Cart</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-            </ul>
+        <div class="brand">
+            <span class="brand-mark">S</span>
+            <div>
+                <h2>SoulMates</h2>
+                <span>Footwear Store</span>
+            </div>
+        </div>
+
+        <div class="sidebar-label">ACCOUNT</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="{% url 'home' %}" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Start Shopping</span>
+            </a>
+
+            <a href="{% url 'orders' %}" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>My Orders</span>
+            </a>
+
+            <a href="{% url 'cart_page' %}" class="nav-item">
+                <span class="nav-icon">🛒</span>
+                <span>Cart</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="member-card">
+                <span class="member-dot"></span>
+                <div>
+                    <strong>Member account</strong>
+                    <small>Active</small>
+                </div>
+            </div>
+
+            <a href="{% url 'logout' %}" class="logout">
+                <span>↪</span>
+                Logout
+            </a>
 
         </div>
 
-        
-        <div class="main-content">
+    </aside>
 
-            <div class="welcome-card">
-                <h1>Welcome, {{ user.username }}</h1>
-                <p>Manage your account and track your orders.</p>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <span class="eyebrow">MY ACCOUNT</span>
+                <p>Personal dashboard</p>
             </div>
 
-            
-            <div class="profile-section">
+            <a href="{% url 'product_list' %}" class="shop-button">
+                Shop Collection
+                <span>→</span>
+            </a>
 
-                <div class="profile-card">
-                    <h3>User Information</h3>
+        </header>
 
-                    <p><strong>Username:</strong> {{ user.username }}</p>
-                    <p><strong>Email:</strong> {{ user.email }}</p>
-                    <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+
+        <!-- WELCOME -->
+        <section class="welcome-card">
+
+            <div class="welcome-content">
+
+                <span class="section-number">01 / ACCOUNT</span>
+
+                <h1>
+                    Welcome back,
+                    <span>{{ user.username }}</span>
+                </h1>
+
+                <p>
+                    Manage your profile, review your orders,
+                    and keep track of everything in your shopping journey.
+                </p>
+
+            </div>
+
+            <div class="welcome-mark">
+                SOUL<br>
+                MATES
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE + STATS -->
+        <section class="dashboard-grid">
+
+            <!-- USER INFORMATION -->
+            <div class="info-card profile-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="card-label">PROFILE</span>
+                        <h2>User Information</h2>
+                    </div>
+
+                    <span class="card-index">01</span>
                 </div>
 
-                <!-- Stats -->
-                <div class="stats-card">
-                    <h3>Account Stats</h3>
+                <div class="profile-details">
 
-                    <p>🛒 Orders: 0</p>
-                    <p>❤️ Wishlist Items: 0</p>
-                    <p>👟 Cart Products: 0</p>
-                    <p>account credites :0</p>
+                    <div class="detail-row">
+                        <span>Username</span>
+                        <strong>{{ user.username }}</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Email address</span>
+                        <strong>{{ user.email }}</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Member since</span>
+                        <strong>{{ user.date_joined|date:"d M Y" }}</strong>
+                    </div>
+
                 </div>
 
             </div>
 
-            <!-- Quick Actions -->
-            <div class="actions">
 
-                <a href="{% url 'product_list' %}">Shop Shoes</a>
-                <a href="{% url 'cart_page' %}">My Wishlist</a>
-                <a href="#">Track Orders</a>
+            <!-- ACCOUNT STATS -->
+            <div class="info-card stats-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="card-label">OVERVIEW</span>
+                        <h2>Account Stats</h2>
+                    </div>
+
+                    <span class="card-index">02</span>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat">
+                        <span class="stat-icon">🛒</span>
+                        <div>
+                            <strong>0</strong>
+                            <span>Orders</span>
+                        </div>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-icon">♡</span>
+                        <div>
+                            <strong>0</strong>
+                            <span>Wishlist</span>
+                        </div>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-icon">◫</span>
+                        <div>
+                            <strong>0</strong>
+                            <span>Cart items</span>
+                        </div>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-icon">₹</span>
+                        <div>
+                            <strong>0</strong>
+                            <span>Credits</span>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
+
+        <!-- QUICK ACTIONS -->
+        <section class="actions-section">
+
+            <div class="actions-heading">
+                <div>
+                    <span class="card-label">QUICK ACCESS</span>
+                    <h2>What would you like to do?</h2>
+                </div>
+            </div>
+
+            <div class="actions-grid">
+
+                <a href="{% url 'product_list' %}" class="action-card primary-action">
+
+                    <div class="action-top">
+                        <span class="action-number">01</span>
+                        <span class="action-arrow">↗</span>
+                    </div>
+
+                    <div>
+                        <span class="action-icon">◈</span>
+                        <h3>Shop Shoes</h3>
+                        <p>Explore the latest footwear collection.</p>
+                    </div>
+
+                </a>
+
+
+                <a href="{% url 'cart_page' %}" class="action-card">
+
+                    <div class="action-top">
+                        <span class="action-number">02</span>
+                        <span class="action-arrow">↗</span>
+                    </div>
+
+                    <div>
+                        <span class="action-icon">♡</span>
+                        <h3>My Wishlist</h3>
+                        <p>View products you've saved for later.</p>
+                    </div>
+
+                </a>
+
+
+                <a href="{% url 'orders' %}" class="action-card">
+
+                    <div class="action-top">
+                        <span class="action-number">03</span>
+                        <span class="action-arrow">↗</span>
+                    </div>
+
+                    <div>
+                        <span class="action-icon">▤</span>
+                        <h3>Track Orders</h3>
+                        <p>Review your previous purchases.</p>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="account-footer">
+
+            <span>SOULMATES</span>
+
+            <p>
+                Your style. Your choice. Your journey.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
 
 </body>
 </html>
