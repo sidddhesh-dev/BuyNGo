@@ -14,11 +14,8 @@ def product_list(request):
     if category:
         products = products.filter(category__iexact=category)
 
-    # PAGINATION
     paginator = Paginator(products, 12)
-
     page_number = request.GET.get('page')
-
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'products/products.html', {
@@ -64,9 +61,6 @@ def import_products(request):
             finish=item.get('finish'),
             features=item.get('features', [])
         )
-
-        # SAVE COLORS
-
         colors = item.get('colors', [])
 
         for color in colors:
