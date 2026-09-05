@@ -3,14 +3,17 @@
 <html lang="en">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SOULMATES</title>
+    <title>{% block title %}SOULMATES — Footwear with a reason{% endblock %}</title>
 
-<link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -19,32 +22,59 @@
 <header class="navbar">
 
     <div class="nav-left">
-        <h2 class="logo">SOULMATES</h2>
+        <a href="{% url 'home' %}" class="brand">
+            <span class="logo">SOULMATES</span>
+        </a>
     </div>
 
-    <div class="nav-center">
+    <nav class="nav-center" aria-label="Main navigation">
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'product_list' %}">Shop</a>
         <a href="#">Categories</a>
         <a href="{% url 'developer' %}">Contact</a>
-    </div>
+    </nav>
 
     <div class="nav-right">
 
-       <div class="nav-search">
-        <input type="text" id="search-input" placeholder="Search products..." onkeyup="searchProduct()"> <button onclick="searchProduct()">Search</button> 
-        <div id="search-results" class="search-results"></div>
+        <div class="nav-search">
+
+            <div class="search-field">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search footwear..."
+                    autocomplete="off"
+                    onkeyup="searchProduct()"
+                >
+
+                <button
+                    type="button"
+                    onclick="searchProduct()"
+                    aria-label="Search products"
+                >
+                    Search
+                </button>
+            </div>
+
+            <div id="search-results" class="search-results"></div>
+
         </div>
 
         <div class="nav-icons">
 
             <a href="{% url 'cart_page' %}" class="icon-link">
-                <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png">
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+                    alt="Cart"
+                >
                 <span>Cart</span>
             </a>
 
-            <a href="{% url 'account' %} " class="icon-link">
-                <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png">
+            <a href="{% url 'account' %}" class="icon-link">
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
+                    alt="Account"
+                >
                 <span>Account</span>
             </a>
 
@@ -56,72 +86,152 @@
 
 <main>
 
-{% block content %}
-
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 
 </main>
 
-
 <footer class="footer">
 
-<div class="footer-container">
+    <div class="footer-container">
 
-<div class="footer-about">
-<h3>SOULMATES</h3>
-<p>Premium footwear designed for comfort and style.</p>
-</div>
+        <div class="footer-about">
 
-<div class="footer-links">
-<h4>Links</h4>
-<a href="{% url 'home' %}">Home</a>
-<a href="{% url 'developer' %}">Developer</a>
-</div>
+            <h3>SOULMATES</h3>
 
-<div class="footer-social">
-<h4>Connect</h4>
-<a href="https://github.com/siddhesh-dev">GitHub</a>
-<a href="https://linkedin.com">LinkedIn</a>
-</div>
+            <p>
+                Footwear designed around the way you actually move.
+                Considered materials, everyday comfort, and a quieter kind of style.
+            </p>
 
-</div>
+        </div>
 
-<p class="footer-bottom">© 2025 SOULMATES</p>
+        <div class="footer-links">
+
+            <h4>Explore</h4>
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'product_list' %}">Shop</a>
+            <a href="#">Categories</a>
+            <a href="{% url 'developer' %}">Contact</a>
+
+        </div>
+
+        <div class="footer-social">
+
+            <h4>Connect</h4>
+
+            <a href="https://github.com/siddhesh-dev" target="_blank" rel="noopener">
+                GitHub
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 SOULMATES. Made for the miles ahead.
+    </p>
 
 </footer>
 
-</body>
 <script>
+
 function searchProduct() {
-    let query = document.getElementById("search-input").value;
-    let resultsBox = document.getElementById("search-results");
+
+    const input = document.getElementById("search-input");
+    const resultsBox = document.getElementById("search-results");
+
+    const query = input.value.trim();
 
     if (query.length === 0) {
         resultsBox.innerHTML = "";
+        resultsBox.style.display = "none";
         return;
     }
 
-    fetch(`/products/search-products/?q=${query}`)
-        .then(response => response.json())
+    fetch(`/products/search-products/?q=${encodeURIComponent(query)}`)
+        .then(response => {
+
+            if (!response.ok) {
+                throw new Error("Search request failed");
+            }
+
+            return response.json();
+
+        })
         .then(data => {
+
             let html = "";
 
             if (data.length === 0) {
-                html = "<p>No products found</p>";
+
+                html = `
+                    <div class="search-empty">
+                        No footwear found for "${query}"
+                    </div>
+                `;
+
             } else {
+
                 data.forEach(product => {
-                    html += `<div class="search-item" onclick="goToProduct(${product.id})">
-                                ${product.name}
-                             </div>`;
+
+                    html += `
+                        <div
+                            class="search-item"
+                            onclick="goToProduct(${product.id})"
+                        >
+                            <span>${product.name}</span>
+                            <span class="search-arrow">→</span>
+                        </div>
+                    `;
+
                 });
+
             }
 
             resultsBox.innerHTML = html;
+            resultsBox.style.display = "block";
+
+        })
+        .catch(error => {
+
+            console.error("Search error:", error);
+
+            resultsBox.innerHTML = `
+                <div class="search-empty">
+                    Search is temporarily unavailable.
+                </div>
+            `;
+
+            resultsBox.style.display = "block";
+
         });
+
 }
 
 function goToProduct(id) {
     window.location.href = `/products/product/${id}/`;
 }
+
+document.addEventListener("click", function(event) {
+
+    const search = document.querySelector(".nav-search");
+
+    if (!search.contains(event.target)) {
+        const resultsBox = document.getElementById("search-results");
+
+        resultsBox.innerHTML = "";
+        resultsBox.style.display = "none";
+    }
+
+});
+
 </script>
+
+</body>
 </html>
